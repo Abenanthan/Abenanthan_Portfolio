@@ -1,558 +1,729 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abenanthan P — CS Engineer &amp; AI Developer</title>
-  <meta name="description" content="Portfolio of Abenanthan P — CS Engineering student at REC Chennai. AI/ML, Full-Stack, Android developer.">
+  <title>Abenanthan P — Computer Science &amp; AI Engineer</title>
+  <meta name="description"
+    content="Portfolio of Abenanthan P — B.E. Computer Science student at REC Chennai. Specialized in AI/ML pipelines, Full-Stack development, and IoT solutions.">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 </head>
+
 <body>
-<div class="cursor-glow" id="cursorGlow"></div>
+  <div class="grid-bg"></div>
 
-<!-- NAV -->
-<nav class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">aben<span>.</span>dev</a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+  <!-- NAVIGATION -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-icon"></span>
+        abenanthan.p
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+      </ul>
+      <a href="#contact" class="btn-contact-nav">Get in touch</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-bg">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
-  <div class="hero-content">
-    <div class="hero-text">
-      <div class="hero-badge"><span class="dot"></span> Open to Opportunities</div>
-      <h1 class="hero-title">
-        Hi, I'm<br><span class="gradient-text">Abenanthan P</span>
-      </h1>
-      <p class="hero-subtitle">Computer Science Engineer building systems at the intersection of AI, Cloud, and real-world impact. From detecting road damage with deep learning to fighting cyberbullying with NLP — I build end-to-end systems, not just models.</p>
-      <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">View Projects ↓</a>
-        <a href="https://github.com/Abenanthan" target="_blank" class="btn btn-outline">GitHub →</a>
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Available for Internships &amp; Roles
+        </div>
+        <h1 class="hero-title">
+          Building intelligent, <span>end-to-end</span> systems.
+        </h1>
+        <p class="hero-subtitle">
+          Computer Science Engineering student at Rajalakshmi Engineering College. Specializing in deep learning
+          pipelines, scalable backend engineering, and IoT ecosystems.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">Explore Work</a>
+          <a href="https://github.com/Abenanthan" target="_blank" class="btn btn-secondary">
+            <svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+            GitHub Profile
+          </a>
+        </div>
       </div>
-      <div class="hero-stats">
-        <div class="stat-item"><span class="stat-number" data-count="14">0</span><span class="stat-label">Repositories</span></div>
-        <div class="stat-item"><span class="stat-number" data-count="4">0</span><span class="stat-label">Key Projects</span></div>
-        <div class="stat-item"><span class="stat-number" data-count="2">0</span><span class="stat-label">1st Place Wins</span></div>
+
+      <!-- TERMINAL HERO WIDGET -->
+      <div class="terminal-wrapper">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="terminal-btn close"></span>
+            <span class="terminal-btn minimize"></span>
+            <span class="terminal-btn maximize"></span>
+          </div>
+          <div class="terminal-title">abenanthan@rec-desktop: ~</div>
+          <div style="width:36px"></div>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+          <div class="terminal-line">
+            <span class="terminal-prompt">abenanthan@rec:~$</span> <span class="terminal-cmd">init-portfolio</span>
+          </div>
+          <div class="terminal-line text-secondary">
+            Initializing interactive profile... Done.<br>
+            Type a command below or click a quick shortcut to inspect my profile.
+          </div>
+          <div class="terminal-line text-muted">
+            Available: about.md, tech-stack.sh, run-diagnostics
+          </div>
+        </div>
+        <div style="padding:0 1.5rem 1.5rem">
+          <div class="terminal-clickable-cmds">
+            <button class="terminal-cmd-pill" onclick="runTerminalCmd('cat about.md')">cat about.md</button>
+            <button class="terminal-cmd-pill" onclick="runTerminalCmd('./tech-stack.sh')">./tech-stack.sh</button>
+            <button class="terminal-cmd-pill" onclick="runTerminalCmd('./run-diagnostics')">./run-diagnostics</button>
+            <button class="terminal-cmd-pill" onclick="clearTerminal()">clear</button>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-avatar-wrapper">
-        <img src="assets/images/hero-avatar.png" alt="Abenanthan P" class="hero-avatar">
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ABOUT -->
-<section class="section" id="about">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-label">// 01. About Me</span>
-      <h2 class="section-title">Who I Am</h2>
+  <!-- ABOUT SECTION -->
+  <section class="section" id="about">
+    <div class="section-header">
+      <span class="section-tag">About Me</span>
+      <h2 class="section-title">Bridging Theory &amp; Systems</h2>
     </div>
     <div class="about-grid">
-      <div class="about-text reveal">
-        <p>I'm a Computer Science Engineering student at <strong>Rajalakshmi Engineering College, Chennai</strong>, passionate about building things that matter. My work spans AI/ML, full-stack development, Android apps, and IoT systems.</p>
-        <p>I've interned at <strong>KuttyKoncepts</strong> as an AI Intern, served as a Designer at <strong>Cyber Sentinels</strong>, and completed an IoT internship at <strong>NSIC</strong>. I'm a 2× first-place winner in national-level competitions.</p>
-        <p>Currently building <strong>VibeUp</strong> — a modern Android music streaming app — while exploring AWS Cloud Architecture, Deep Learning in Computer Vision, and MLOps.</p>
+      <div class="about-content">
+        <p>
+          I am a Computer Science Engineering undergraduate student at <strong>Rajalakshmi Engineering College (REC),
+            Chennai</strong> (Batch of 2024-2028). I specialize in developing end-to-end applications where machine
+          learning models run efficiently alongside structured backends.
+        </p>
+        <p>
+          My experience includes engineering automated media production pipelines during my internship at
+          <strong>KuttyKoncepts</strong>, designing telemetry pipelines on Raspberry Pi at the <strong>National Small
+            Industries Corporation (NSIC)</strong>, and crafting digital assets for cybersecurity outreach with the
+          <strong>Cyber Sentinels Club</strong>.
+        </p>
+        <p>
+          I focus on writing clean, robust code and structuring systems that solve concrete developer or user pain
+          points, aiming to build scalable cloud architectures and modular applications.
+        </p>
       </div>
-      <div class="about-highlights reveal">
-        <div class="highlight-card">
-          <div class="highlight-icon">🤖</div>
-          <div class="highlight-title">AI / ML</div>
-          <div class="highlight-desc">Deep Learning, NLP, Computer Vision with PyTorch & TensorFlow</div>
+      <div class="quick-facts">
+        <div class="fact-card">
+          <div class="fact-icon">🏆</div>
+          <h3 class="fact-title">Innovative Project</h3>
+          <p class="fact-desc">Innovative Project of the Year award from the Institution Innovation Council.</p>
         </div>
-        <div class="highlight-card">
-          <div class="highlight-icon">📱</div>
-          <div class="highlight-title">Android Dev</div>
-          <div class="highlight-desc">Kotlin, Jetpack Compose, Firebase, ExoPlayer</div>
+        <div class="fact-card">
+          <div class="fact-icon">🏅</div>
+          <h3 class="fact-title">Hackathon Finalist</h3>
+          <p class="fact-desc">Selected as national finalist in the SVCE Hackathon (AI recommendation system).</p>
         </div>
-        <div class="highlight-card">
-          <div class="highlight-icon">☁️</div>
-          <div class="highlight-title">Cloud & DevOps</div>
-          <div class="highlight-desc">AWS, Docker, Linux Systems, CI/CD Pipelines</div>
+        <div class="fact-card">
+          <div class="fact-icon">☁️</div>
+          <h3 class="fact-title">AWS Academy</h3>
+          <p class="fact-desc">Completed 60-Hour Cloud Architecting curriculum from AWS Academy.</p>
         </div>
-        <div class="highlight-card">
-          <div class="highlight-icon">🔐</div>
-          <div class="highlight-title">Cybersecurity</div>
-          <div class="highlight-desc">Networking, Linux Security, Ethical Hacking</div>
+        <div class="fact-card">
+          <div class="fact-icon">⚡</div>
+          <h3 class="fact-title">97% NLP Accuracy</h3>
+          <p class="fact-desc">Achieved high accuracy on multiclass comments toxicity moderation.</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- EXPERIENCE -->
-<section class="section" id="experience" style="background: var(--bg-secondary);">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-label">// 02. Experience</span>
-      <h2 class="section-title">Where I've Worked</h2>
+  <!-- EXPERIENCE SECTION -->
+  <section class="section" id="experience">
+    <div class="section-header">
+      <span class="section-tag">Professional History</span>
+      <h2 class="section-title">Practical Experience</h2>
     </div>
-    <div class="timeline reveal">
+    <div class="timeline">
       <div class="timeline-item">
-        <div class="timeline-dot"></div>
+        <div class="timeline-marker">💻</div>
         <div class="timeline-content">
-          <div class="timeline-role">AI Intern</div>
-          <div class="timeline-company">KuttyKoncepts</div>
-          <div class="timeline-date">2025</div>
-          <ul class="timeline-desc">
-            <li>Secured 1st Place in competitive internship program; selected for institution-scale AI projects at REC</li>
-            <li>Built automated AI-powered animated educational video pipeline using MoviePy, gTTS, and Pillow</li>
-            <li>Developed AI voiceover and video editing workflows for fully automated academic content generation</li>
-            <li>Contributed to Moodle-based LMS development, video platform integration, and smart learning design</li>
+          <div class="timeline-header-block">
+            <div class="timeline-title-group">
+              <h3>AI Development Intern</h3>
+              <span class="timeline-company">KuttyKoncepts</span>
+            </div>
+            <span class="timeline-date">Selected June 2025</span>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Awarded 1st place in the competitive selection process to contribute to institutional educational tools.
+            </li>
+            <li>Engineered an automated media generation pipeline using <code>MoviePy</code>, <code>gTTS</code>, and
+              <code>Pillow</code>.</li>
+            <li>Optimized rendering times and modularized video overlays for robust automated academic publishing.</li>
+            <li>Collaborated on LMS design enhancements and custom multimedia content injection modules.</li>
           </ul>
         </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-role">IoT Intern</div>
-          <div class="timeline-company">NSIC (National Small Industries Corporation)</div>
-          <div class="timeline-date">2025</div>
-          <ul class="timeline-desc">
-            <li>Led end-to-end development of a Raspberry Pi–based Traffic Congestion Analytics System</li>
-            <li>Wrote Python modules for traffic simulation, congestion analysis, and edge-level processing</li>
-            <li>Integrated ThingSpeak IoT Cloud Platform via REST APIs for real-time visualization</li>
-            <li>Delivered full edge-to-cloud telemetry pipeline demonstrating complete IoT lifecycle</li>
-          </ul>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-role">Designer</div>
-          <div class="timeline-company">Cyber Sentinels Club</div>
-          <div class="timeline-date">2024 – Present</div>
-          <ul class="timeline-desc">
-            <li>Designed posters, presentations, and digital content for technical cybersecurity events</li>
-            <li>Collaborated cross-functionally to produce visually engaging designs for event outreach</li>
-            <li>Drove the club's promotional reach through consistent branding and creative communication</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- PROJECTS -->
-<section class="section" id="projects">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-label">// 03. Projects</span>
-      <h2 class="section-title">Things I've Built</h2>
+      <div class="timeline-item">
+        <div class="timeline-marker">📡</div>
+        <div class="timeline-content">
+          <div class="timeline-header-block">
+            <div class="timeline-title-group">
+              <h3>IoT Systems Intern</h3>
+              <span class="timeline-company">National Small Industries Corporation (NSIC)</span>
+            </div>
+            <span class="timeline-date">December 2025</span>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Developed a functional edge-to-cloud traffic congestion simulation pipeline on Raspberry Pi hardware.
+            </li>
+            <li>Programmed Python analytics engines evaluating telemetry metrics at the hardware level.</li>
+            <li>Integrated RESTful APIs connecting local telemetry outputs with the ThingSpeak Cloud dashboard.</li>
+            <li>Tested edge connectivity, handling network drop scenarios with local caching queues.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">🎨</div>
+        <div class="timeline-content">
+          <div class="timeline-header-block">
+            <div class="timeline-title-group">
+              <h3>Creative Design Member</h3>
+              <span class="timeline-company">Cyber Sentinels Club — REC</span>
+            </div>
+            <span class="timeline-date">2025 – Present</span>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Created informational layouts, infographics, and assets explaining security principles for college
+              workshops.</li>
+            <li>Designed structured decks and promotional materials that improved event participation.</li>
+            <li>Collaborated across technical teams to maintain branding alignment during regional hackathons.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="section" id="projects">
+    <div class="section-header">
+      <span class="section-tag">Featured Work</span>
+      <h2 class="section-title">Technical Projects</h2>
     </div>
     <div class="projects-grid">
-      <!-- VibeUp - Featured -->
-      <div class="project-card featured reveal">
-        <div class="project-card-inner">
-          <div class="project-img-wrapper">
-            <img src="assets/images/project-vibeup.png" alt="VibeUp Music App" class="project-img">
-            <div class="project-img-overlay"></div>
-          </div>
-          <div class="project-info">
-            <div class="project-category">Android Development</div>
-            <h3 class="project-name">VibeUp — Music Streaming App</h3>
-            <p class="project-desc">A full-featured Android music streaming app for Tamil, Telugu & Hindi music via JioSaavn API. Features Firebase authentication, playlist management, and real-time media controls with lock screen & notification support.</p>
-            <div class="project-tags">
-              <span class="project-tag">Kotlin</span>
-              <span class="project-tag">Jetpack Compose</span>
-              <span class="project-tag">Firebase</span>
-              <span class="project-tag">ExoPlayer/Media3</span>
+      <!-- VibeUp -->
+      <div class="project-card">
+        <div class="project-visual">
+          <div class="mockup-music">
+            <div class="music-header">
+              <span>VibeUp Music Player</span>
+              <span id="musicTime">0:45 / 3:12</span>
             </div>
-            <a href="https://github.com/Abenanthan/VibeUp-Music_Streaming_App" target="_blank" class="project-link">View on GitHub →</a>
+            <div class="music-track-info">
+              <div class="music-art">🎵</div>
+              <div class="music-details">
+                <h4>Kaadhal Solla</h4>
+                <p>Yuvan Shankar Raja • Tamil Hits</p>
+              </div>
+            </div>
+            <div class="music-visualizer" id="musicBars">
+              <div class="music-bar"></div>
+              <div class="music-bar"></div>
+              <div class="music-bar"></div>
+              <div class="music-bar"></div>
+              <div class="music-bar"></div>
+              <div class="music-bar"></div>
+              <div class="music-bar"></div>
+              <div class="music-bar"></div>
+              <div class="music-bar"></div>
+              <div class="music-bar"></div>
+              <div class="music-bar"></div>
+              <div class="music-bar"></div>
+            </div>
+            <div class="music-controls">
+              <button class="music-btn" onclick="prevTrack()">⏮</button>
+              <button class="music-btn play-pause" id="playBtn" onclick="togglePlayState()">⏸</button>
+              <button class="music-btn" onclick="nextTrack()">⏭</button>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">Kotlin</span>
+            <span class="project-tag">Jetpack Compose</span>
+            <span class="project-tag">Firebase Auth &amp; Firestore</span>
+            <span class="project-tag">ExoPlayer / Media3</span>
+          </div>
+          <h3 class="project-title">VibeUp — Full-Featured Music App</h3>
+          <p class="project-desc">
+            An Android music streaming application integrating JioSaavn APIs to deliver Tamil, Telugu, and Hindi audio
+            tracks. Uses ExoPlayer for background playback, notification bar controls, real-time lock screen sync, and
+            Firestore databases for customized user playlists.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Abenanthan/VibeUp-Music_Streaming_App" target="_blank" class="project-link">View
+              Source Code →</a>
           </div>
         </div>
       </div>
+
       <!-- BitVerity -->
-      <div class="project-card reveal">
-        <div class="project-img-wrapper">
-          <img src="assets/images/project-bitverity.png" alt="BitVerity" class="project-img">
-          <div class="project-img-overlay"></div>
-        </div>
-        <div class="project-info">
-          <div class="project-category">AI / Full-Stack</div>
-          <h3 class="project-name">BitVerity</h3>
-          <p class="project-desc">AI-monitored competitive coding platform with a real-time multi-model ML pipeline detecting AI-generated code via behavioral analysis and code pattern fingerprinting.</p>
+      <div class="project-card alternate">
+        <div class="project-content">
           <div class="project-tags">
+            <span class="project-tag">Node.js</span>
             <span class="project-tag">PostgreSQL</span>
             <span class="project-tag">Redis</span>
-            <span class="project-tag">Socket.io</span>
+            <span class="project-tag">CodeBERT &amp; UniXcoder</span>
             <span class="project-tag">Docker</span>
-            <span class="project-tag">XGBoost</span>
-            <span class="project-tag">CodeBERT</span>
           </div>
-          <a href="https://github.com/Abenanthan/BitVerity-AI-Monitored-Programming-Platform-with-Integrated-Code-Authenticity-Detection" target="_blank" class="project-link">View on GitHub →</a>
+          <h3 class="project-title">BitVerity — AI Code Authenticity Tracker</h3>
+          <p class="project-desc">
+            A full-stack competitive coding platform with an integrated real-time machine learning detection pipeline.
+            Evaluates developer keystrokes, temporal patterns, and stylistic consistency against fine-tuned
+            classification models to verify origin authenticity.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Abenanthan/BitVerity-AI-Monitored-Programming-Platform-with-Integrated-Code-Authenticity-Detection"
+              target="_blank" class="project-link">View Source Code →</a>
+          </div>
+        </div>
+        <div class="project-visual">
+          <div class="mockup-code">
+            <div class="code-header">
+              <span>authenticity_check.py</span>
+            </div>
+            <div class="code-content">
+              <span class="code-keyword">import</span> xgboost <span class="code-keyword">as</span> xgb<br>
+              <span class="code-keyword">from</span> unixcoder <span class="code-keyword">import</span>
+              UniXcoder<br><br>
+              <span class="code-comment"># Analyze abstract syntax tree</span><br>
+              score = model.predict(submission)<br>
+              <span class="code-keyword">print</span>(f<span class="code-string">"AI Probability:
+                {score:.2f}"</span>)<br>
+
+              <div class="code-alert-card">
+                <div class="code-alert-title">
+                  <span style="color:#ef4444">⚠️ Anomaly Flagged</span>
+                </div>
+                <div class="code-alert-desc">
+                  Keystroke density: abnormal.<br>
+                  Confidence score: 98.4% machine-generated.
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- Urban Road Inspector -->
-      <div class="project-card reveal">
-        <div class="project-img-wrapper">
-          <img src="assets/images/project-road.png" alt="Urban Road Inspector" class="project-img">
-          <div class="project-img-overlay"></div>
+
+      <!-- Road Inspector -->
+      <div class="project-card">
+        <div class="project-visual">
+          <div class="mockup-cv"
+            style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%22 height=%22100%22 fill=%22%232c2d30%22/><line x1=%220%22 y1=%2250%22 x2=%22100%22 y2=%2250%22 stroke=%22%23444%22 stroke-dasharray=%225%22/><line x1=%2250%22 y1=%220%22 x2=%2250%22 y2=%22100%22 stroke=%22%23444%22 stroke-dasharray=%225%22/></svg>')">
+            <div class="cv-scanline"></div>
+            <div class="cv-bbox" style="top:25%;left:20%;width:55%;height:40%">
+              <span class="cv-label">D00: Longitudinal Crack (92%)</span>
+            </div>
+            <div class="cv-info-pane">
+              FPS: 28.4<br>
+              Model: YOLOv8s<br>
+              Inference: 14.2ms
+            </div>
+          </div>
         </div>
-        <div class="project-info">
-          <div class="project-category">Deep Learning / CV</div>
-          <h3 class="project-name">Urban Road Inspector</h3>
-          <p class="project-desc">End-to-end road damage detection system: binary classification → 4-class recognition → real-time YOLOv8s bounding box localization. Built on RDD2022 dataset with ResNet-50.</p>
+        <div class="project-content">
           <div class="project-tags">
             <span class="project-tag">Python</span>
             <span class="project-tag">PyTorch</span>
-            <span class="project-tag">ResNet-50</span>
             <span class="project-tag">YOLOv8s</span>
+            <span class="project-tag">ResNet-50</span>
+            <span class="project-tag">OpenCV</span>
           </div>
-          <a href="https://github.com/Abenanthan" target="_blank" class="project-link">View on GitHub →</a>
+          <h3 class="project-title">Urban Road Inspector — Vision Pipeline</h3>
+          <p class="project-desc">
+            An automated object detection framework designed to locate and categorize asphalt damage. Features a
+            cascading classification pipeline progressing from rapid binary damage filtration to precise multi-class
+            localized crack bounding-box drawing.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Abenanthan" target="_blank" class="project-link">View Repository →</a>
+          </div>
         </div>
       </div>
+
       <!-- ToxiShield -->
-      <div class="project-card featured reveal">
-        <div class="project-card-inner">
-          <div class="project-img-wrapper">
-            <img src="assets/images/project-toxishield.png" alt="ToxiShield" class="project-img">
-            <div class="project-img-overlay"></div>
+      <div class="project-card alternate">
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">TensorFlow &amp; Keras</span>
+            <span class="project-tag">Bidirectional LSTM</span>
+            <span class="project-tag">NLP Pipelines</span>
+            <span class="project-tag">Gradio</span>
           </div>
-          <div class="project-info">
-            <div class="project-category">NLP / Deep Learning</div>
-            <h3 class="project-name">ToxiShield — Cyberbullying Detection</h3>
-            <p class="project-desc">Deep learning content moderation system using Bidirectional LSTM detecting 6 types of toxic content with 97% accuracy. Features real-time predictions, batch processing, and a Gradio interface.</p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">TensorFlow</span>
-              <span class="project-tag">Bi-LSTM</span>
-              <span class="project-tag">NLP</span>
-              <span class="project-tag">Keras</span>
-              <span class="project-tag">Gradio</span>
-            </div>
-            <a href="https://github.com/Abenanthan" target="_blank" class="project-link">View on GitHub →</a>
+          <h3 class="project-title">ToxiShield — Cyberbullying Classifier</h3>
+          <p class="project-desc">
+            A deep learning content moderation system designed for online social forums. Utilizes a Bidirectional LSTM
+            network to evaluate comment strings against six distinct categories of toxicity, yielding 97% training
+            accuracy.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Abenanthan" target="_blank" class="project-link">View Repository →</a>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="project-visual">
+          <div class="mockup-nlp">
+            <div class="nlp-header">ToxiShield Moderation Pipeline</div>
+            <textarea class="nlp-input" id="nlpInput" rows="2"
+              placeholder="Type a text here to test prediction..."></textarea>
+            <button class="nlp-submit" onclick="testToxicity()">Run Classifier</button>
 
-<!-- SKILLS -->
-<section class="section" id="skills" style="background: var(--bg-secondary);">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-label">// 04. Skills</span>
-      <h2 class="section-title">Tech Stack</h2>
-    </div>
-    <div class="skills-categories reveal">
-      <div class="skill-category">
-        <div class="skill-cat-icon">💻</div>
-        <div class="skill-cat-title">Languages</div>
-        <div class="skill-list">
-          <span class="skill-pill">Python</span>
-          <span class="skill-pill">Java</span>
-          <span class="skill-pill">Kotlin</span>
-          <span class="skill-pill">SQL</span>
-          <span class="skill-pill">JavaScript</span>
-          <span class="skill-pill">HTML/CSS</span>
-          <span class="skill-pill">C</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <div class="skill-cat-icon">🧠</div>
-        <div class="skill-cat-title">AI / ML & Frameworks</div>
-        <div class="skill-list">
-          <span class="skill-pill">PyTorch</span>
-          <span class="skill-pill">TensorFlow</span>
-          <span class="skill-pill">Keras</span>
-          <span class="skill-pill">YOLOv8</span>
-          <span class="skill-pill">ResNet</span>
-          <span class="skill-pill">Bi-LSTM</span>
-          <span class="skill-pill">XGBoost</span>
-          <span class="skill-pill">CodeBERT</span>
-          <span class="skill-pill">Gradio</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <div class="skill-cat-icon">☁️</div>
-        <div class="skill-cat-title">Cloud & DevOps</div>
-        <div class="skill-list">
-          <span class="skill-pill">AWS</span>
-          <span class="skill-pill">Docker</span>
-          <span class="skill-pill">Linux</span>
-          <span class="skill-pill">Git</span>
-          <span class="skill-pill">REST APIs</span>
-          <span class="skill-pill">ThingSpeak</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <div class="skill-cat-icon">🗄️</div>
-        <div class="skill-cat-title">Databases</div>
-        <div class="skill-list">
-          <span class="skill-pill">PostgreSQL</span>
-          <span class="skill-pill">Redis</span>
-          <span class="skill-pill">Firebase Firestore</span>
-          <span class="skill-pill">MySQL</span>
-          <span class="skill-pill">Prisma</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <div class="skill-cat-icon">📱</div>
-        <div class="skill-cat-title">Mobile & Frontend</div>
-        <div class="skill-list">
-          <span class="skill-pill">Jetpack Compose</span>
-          <span class="skill-pill">React</span>
-          <span class="skill-pill">Node.js</span>
-          <span class="skill-pill">Socket.io</span>
-          <span class="skill-pill">ExoPlayer</span>
-          <span class="skill-pill">Monaco Editor</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <div class="skill-cat-icon">🎨</div>
-        <div class="skill-cat-title">Design & Tools</div>
-        <div class="skill-list">
-          <span class="skill-pill">Figma</span>
-          <span class="skill-pill">Canva</span>
-          <span class="skill-pill">Pillow</span>
-          <span class="skill-pill">MoviePy</span>
-          <span class="skill-pill">VS Code</span>
-          <span class="skill-pill">Android Studio</span>
+            <div class="nlp-results">
+              <div class="nlp-bar-container">
+                <span class="nlp-label">Toxic</span>
+                <div class="nlp-bar">
+                  <div class="nlp-fill nlp-fill-toxic" id="barToxic"></div>
+                </div>
+              </div>
+              <div class="nlp-bar-container">
+                <span class="nlp-label">Insult</span>
+                <div class="nlp-bar">
+                  <div class="nlp-fill nlp-fill-toxic" id="barInsult"></div>
+                </div>
+              </div>
+              <div class="nlp-bar-container">
+                <span class="nlp-label">Obscene</span>
+                <div class="nlp-bar">
+                  <div class="nlp-fill nlp-fill-toxic" id="barObscene"></div>
+                </div>
+              </div>
+              <div class="nlp-bar-container">
+                <span class="nlp-label">Severe</span>
+                <div class="nlp-bar">
+                  <div class="nlp-fill nlp-fill-toxic" id="barSevere"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- EDUCATION -->
-<section class="section" id="education">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-label">// 05. Education</span>
-      <h2 class="section-title">Academic Journey</h2>
+  <!-- SKILLS SECTION -->
+  <section class="section" id="skills">
+    <div class="section-header">
+      <span class="section-tag">Languages &amp; Technologies</span>
+      <h2 class="section-title">Technical Expertise</h2>
     </div>
-    <div class="edu-card reveal">
-      <div class="edu-icon">🎓</div>
-      <div class="edu-details">
-        <h3>Rajalakshmi Engineering College, Chennai</h3>
-        <div class="edu-degree">B.E. in Computer Science & Engineering</div>
-        <div class="edu-info">2024 – 2028 (Expected) &nbsp;•&nbsp; Anna University</div>
+    <div class="skills-matrix">
+      <div class="skills-cat">
+        <div class="skills-cat-title">
+          <span class="skills-cat-icon">💻</span>
+          Languages
+        </div>
+        <div class="skills-list">
+          <span class="skill-item">Python</span>
+          <span class="skill-item">Java</span>
+          <span class="skill-item">Kotlin</span>
+          <span class="skill-item">C</span>
+          <span class="skill-item">SQL</span>
+          <span class="skill-item">Bash / Shell</span>
+        </div>
       </div>
-    </div>
-    <div class="section-header reveal" style="margin-top: 3rem; margin-bottom: 1.5rem;">
-      <span class="section-label">Currently Learning</span>
-    </div>
-    <div class="learning-grid reveal">
-      <div class="learning-item">
-        <h4>🔬 Deep Learning (CV)</h4>
-        <p>Object Detection · Semantic Segmentation · Instance Segmentation</p>
-      </div>
-      <div class="learning-item">
-        <h4>☁️ Cloud Architecture</h4>
-        <p>AWS Solutions Architect · EC2 · S3 · Lambda · VPC</p>
-      </div>
-      <div class="learning-item">
-        <h4>⚙️ MLOps</h4>
-        <p>Model Deployment · Docker · Experiment Tracking (W&B)</p>
-      </div>
-      <div class="learning-item">
-        <h4>📱 Android Development</h4>
-        <p>Advanced Jetpack Compose · Coroutines · Clean Architecture</p>
-      </div>
-      <div class="learning-item">
-        <h4>🔐 Cybersecurity</h4>
-        <p>Networking Fundamentals · Linux Security · Ethical Hacking Basics</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ACHIEVEMENTS -->
-<section class="section" id="achievements" style="background: var(--bg-secondary);">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-label">// 06. Achievements</span>
-      <h2 class="section-title">Recognition</h2>
-    </div>
-    <div class="achievements-grid reveal">
-      <div class="achievement-card">
-        <div class="achievement-icon">🏆</div>
-        <div>
-          <h3>2× First Place Winner</h3>
-          <p>National-level technical competitions showcasing AI and engineering expertise</p>
+      <div class="skills-cat">
+        <div class="skills-cat-title">
+          <span class="skills-cat-icon">🧠</span>
+          AI &amp; Data Science
+        </div>
+        <div class="skills-list">
+          <span class="skill-item">PyTorch</span>
+          <span class="skill-item">TensorFlow</span>
+          <span class="skill-item">YOLOv8</span>
+          <span class="skill-item">LSTM</span>
+          <span class="skill-item">Scikit-learn</span>
+          <span class="skill-item">XGBoost</span>
+          <span class="skill-item">OpenCV</span>
+          <span class="skill-item">NLP Pipelines</span>
         </div>
       </div>
-      <div class="achievement-card">
-        <div class="achievement-icon">🥇</div>
-        <div>
-          <h3>Top AI Intern</h3>
-          <p>Secured 1st Place in competitive internship program at KuttyKoncepts; selected for institution-scale AI projects</p>
-        </div>
-      </div>
-      <div class="achievement-card">
-        <div class="achievement-icon">🎯</div>
-        <div>
-          <h3>97% Accuracy — ToxiShield</h3>
-          <p>Achieved exceptional detection accuracy on cyberbullying classification across 6 toxicity categories</p>
-        </div>
-      </div>
-      <div class="achievement-card">
-        <div class="achievement-icon">🔗</div>
-        <div>
-          <h3>Edge-to-Cloud IoT Pipeline</h3>
-          <p>Delivered complete Raspberry Pi telemetry system with real-time cloud visualization at NSIC</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- CONTACT -->
-<section class="section" id="contact">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-label">// 07. Contact</span>
-      <h2 class="section-title">Let's Connect</h2>
+      <div class="skills-cat">
+        <div class="skills-cat-title">
+          <span class="skills-cat-icon">☁️</span>
+          Cloud &amp; Databases
+        </div>
+        <div class="skills-list">
+          <span class="skill-item">AWS Academy</span>
+          <span class="skill-item">Docker</span>
+          <span class="skill-item">PostgreSQL</span>
+          <span class="skill-item">Redis</span>
+          <span class="skill-item">MongoDB</span>
+          <span class="skill-item">MySQL</span>
+          <span class="skill-item">ThingSpeak Cloud</span>
+        </div>
+      </div>
     </div>
-    <div class="contact-wrapper reveal">
-      <div class="contact-info">
-        <h3>Got a project in mind?</h3>
-        <p>I'm always interested in hearing about new opportunities, collaborations, or just having a chat about technology.</p>
-        <div class="contact-links">
-          <a href="mailto:abenanthan@example.com" class="contact-link">
-            <span class="contact-link-icon">✉️</span>
-            <div>
-              <div class="contact-link-label">Email</div>
-              <div class="contact-link-value">abenanthan@example.com</div>
+  </section>
+
+  <!-- EDUCATION & CERTIFICATIONS -->
+  <section class="section" id="education">
+    <div class="section-header">
+      <span class="section-tag">Education &amp; Credentials</span>
+      <h2 class="section-title">Academic Background</h2>
+    </div>
+    <div class="education-section">
+      <div class="edu-block">
+        <div class="edu-shield">🎓</div>
+        <div class="edu-info">
+          <h3>Rajalakshmi Engineering College</h3>
+          <p class="edu-degree">Bachelor of Engineering — Computer Science &amp; Engineering</p>
+          <p class="edu-meta">Chennai, India • Class of 2024 - 2028</p>
+        </div>
+      </div>
+
+      <div class="certs-block">
+        <h3>Certifications</h3>
+        <div class="certs-list">
+          <div class="cert-card">
+            <span class="cert-icon">☁️</span>
+            <div class="cert-details">
+              <h4>AWS Academy Graduate</h4>
+              <p>Cloud Architecting (60 Hours course completion)</p>
+            </div>
+          </div>
+          <div class="cert-card">
+            <span class="cert-icon">📊</span>
+            <div class="cert-details">
+              <h4>Exploratory Data Analysis</h4>
+              <p>Coursera Project Network — Python &amp; Pandas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section" id="contact">
+    <div class="section-header">
+      <span class="section-tag">Get in Touch</span>
+      <h2 class="section-title">Initiate Collaboration</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-details">
+        <p>
+          Feel free to reach out to discuss internship projects, software development engineering opportunities, or
+          technical system architectures.
+        </p>
+        <div class="contact-methods">
+          <a href="mailto:abenanthan.72007@gmail.com" class="contact-method">
+            <span class="contact-icon">✉️</span>
+            <div class="contact-meta">
+              <span>Email</span>
+              <p>abenanthan.72007@gmail.com</p>
             </div>
           </a>
-          <a href="https://github.com/Abenanthan" target="_blank" class="contact-link">
-            <span class="contact-link-icon">💻</span>
-            <div>
-              <div class="contact-link-label">GitHub</div>
-              <div class="contact-link-value">github.com/Abenanthan</div>
+          <a href="https://linkedin.com/in/abenanthan-p-561485318" target="_blank" class="contact-method">
+            <span class="contact-icon">🔗</span>
+            <div class="contact-meta">
+              <span>LinkedIn</span>
+              <p>linkedin.com/in/abenanthan-p-561485318</p>
             </div>
           </a>
-          <a href="https://linkedin.com/in/abenanthan" target="_blank" class="contact-link">
-            <span class="contact-link-icon">🔗</span>
-            <div>
-              <div class="contact-link-label">LinkedIn</div>
-              <div class="contact-link-value">linkedin.com/in/abenanthan</div>
+          <a href="https://github.com/Abenanthan" target="_blank" class="contact-method">
+            <span class="contact-icon">💻</span>
+            <div class="contact-meta">
+              <span>GitHub</span>
+              <p>github.com/Abenanthan</p>
             </div>
           </a>
         </div>
       </div>
-      <form class="contact-form" onsubmit="handleSubmit(event)">
-        <div class="form-group"><input type="text" placeholder="Your Name" required></div>
-        <div class="form-group"><input type="email" placeholder="Your Email" required></div>
-        <div class="form-group"><input type="text" placeholder="Subject"></div>
-        <div class="form-group"><textarea rows="5" placeholder="Your Message..." required></textarea></div>
-        <button type="submit" class="btn btn-primary" style="width: fit-content;">Send Message ✉️</button>
+
+      <form class="contact-form" onsubmit="handleContactSubmit(event)">
+        <div class="form-row">
+          <input type="text" class="form-input" placeholder="Your Name" required>
+          <input type="email" class="form-input" placeholder="Your Email" required>
+        </div>
+        <input type="text" class="form-input" placeholder="Subject">
+        <textarea class="form-input" rows="4" placeholder="Your Message..." required></textarea>
+        <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">Send Message</button>
       </form>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-socials">
-      <a href="https://github.com/Abenanthan" target="_blank" title="GitHub">⌨</a>
-      <a href="https://linkedin.com/in/abenanthan" target="_blank" title="LinkedIn">in</a>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-text">© 2026 Abenanthan P. Built using standard web standards.</span>
+      <div class="footer-links">
+        <a href="https://github.com/Abenanthan" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/abenanthan-p-561485318" target="_blank">LinkedIn</a>
+      </div>
     </div>
-    <p>Designed & Built by Abenanthan P · © 2026</p>
-  </div>
-</footer>
+  </footer>
 
-<script>
-// Cursor glow
-const glow = document.getElementById('cursorGlow');
-document.addEventListener('mousemove', e => {
-  glow.style.left = e.clientX + 'px';
-  glow.style.top = e.clientY + 'px';
-});
+  <script>
+    // Mobile navigation toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
 
-// Nav scroll
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 50);
-});
+    // Change header background on scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
 
-// Hamburger
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navLinks.classList.toggle('open');
-});
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navLinks.classList.remove('open');
-  });
-});
+    // Interactive Terminal Simulator in Hero Section
+    const terminalBody = document.getElementById('terminalBody');
+    const commandsData = {
+      'cat about.md': [
+        '<span class="terminal-output highlight">> B.E. Computer Science student at REC Chennai.</span>',
+        '<span class="terminal-output">> Passionate about ML pipelines, cloud networking, and fullstack apps.</span>',
+        '<span class="terminal-output">> Winner: Innovative Project of the Year from IIC.</span>'
+      ],
+      './tech-stack.sh': [
+        '<span class="terminal-output">Languages: Python, Java, Kotlin, C, SQL, Bash</span>',
+        '<span class="terminal-output">Frameworks: PyTorch, TensorFlow, YOLOv8, Node.js</span>',
+        '<span class="terminal-output">Infrastructure: AWS Academy, Docker, Linux Administration</span>'
+      ],
+      './run-diagnostics': [
+        '<span class="terminal-output">Running diagnostics...</span>',
+        '<span class="terminal-output">[OK] Git contributions fetched</span>',
+        '<span class="terminal-output">[OK] Projects verified & running</span>',
+        '<span class="terminal-output">[OK] AWS certification status: Cloud Architecting Graduate</span>'
+      ]
+    };
 
-// Scroll reveal
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 100);
-      observer.unobserve(entry.target);
+    function runTerminalCmd(cmd) {
+      let lines = [
+        `<div class="terminal-line"><span class="terminal-prompt">abenanthan@rec:~$</span> <span class="terminal-cmd">${cmd}</span></div>`
+      ];
+
+      if (commandsData[cmd]) {
+        commandsData[cmd].forEach(output => {
+          lines.push(`<div class="terminal-line">${output}</div>`);
+        });
+      } else if (cmd === 'clear') {
+        terminalBody.innerHTML = '';
+        return;
+      }
+
+      terminalBody.innerHTML += lines.join('');
+      terminalBody.scrollTop = terminalBody.scrollHeight;
     }
-  });
-}, { threshold: 0.1 });
-reveals.forEach(el => observer.observe(el));
 
-// Counter animation
-const counters = document.querySelectorAll('.stat-number');
-const counterObs = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-      const target = +el.dataset.count;
-      let current = 0;
-      const step = Math.max(1, Math.floor(target / 30));
-      const timer = setInterval(() => {
-        current += step;
-        if (current >= target) { current = target; clearInterval(timer); }
-        el.textContent = current + (target > 3 ? '+' : '×');
-      }, 40);
-      counterObs.unobserve(el);
+    function clearTerminal() {
+      terminalBody.innerHTML = `
+    <div class="terminal-line">
+      <span class="terminal-prompt">abenanthan@rec:~$</span> <span class="terminal-cmd">clear</span>
+    </div>
+  `;
     }
-  });
-}, { threshold: 0.5 });
-counters.forEach(el => counterObs.observe(el));
 
-// Form
-function handleSubmit(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('button');
-  btn.textContent = 'Sent! ✓';
-  btn.style.background = 'linear-gradient(135deg, #00cec9, #00b894)';
-  setTimeout(() => { btn.textContent = 'Send Message ✉️'; btn.style.background = ''; e.target.reset(); }, 2500);
-}
+    // Live interactive music mockup control logic
+    let isPlaying = true;
+    const playBtn = document.getElementById('playBtn');
+    const musicBars = document.getElementById('musicBars');
+    const musicTime = document.getElementById('musicTime');
 
-// Smooth anchor
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
-</script>
+    function togglePlayState() {
+      isPlaying = !isPlaying;
+      if (isPlaying) {
+        playBtn.textContent = '⏸';
+        musicBars.style.opacity = '1';
+        musicTime.textContent = '0:45 / 3:12';
+        Array.from(musicBars.children).forEach(bar => {
+          bar.style.animationPlayState = 'running';
+        });
+      } else {
+        playBtn.textContent = '▶';
+        musicTime.textContent = 'Paused';
+        Array.from(musicBars.children).forEach(bar => {
+          bar.style.animationPlayState = 'paused';
+        });
+      }
+    }
+
+    function prevTrack() {
+      alert("Simulated: Switched to previous playlist item.");
+    }
+    function nextTrack() {
+      alert("Simulated: Switched to next playlist item.");
+    }
+
+    // Live ToxiShield classifier simulation
+    function testToxicity() {
+      const input = document.getElementById('nlpInput').value.trim().toLowerCase();
+      const barToxic = document.getElementById('barToxic');
+      const barInsult = document.getElementById('barInsult');
+      const barObscene = document.getElementById('barObscene');
+      const barSevere = document.getElementById('barSevere');
+
+      if (!input) {
+        alert("Please enter a string first.");
+        return;
+      }
+
+      let scores = { toxic: 2, insult: 1, obscene: 1, severe: 0 };
+
+      if (input.includes('hate') || input.includes('stupid') || input.includes('idiot')) {
+        scores = { toxic: 85, insult: 70, obscene: 45, severe: 20 };
+      } else if (input.includes('kill') || input.includes('die')) {
+        scores = { toxic: 98, insult: 88, obscene: 92, severe: 80 };
+      } else if (input.includes('hello') || input.includes('good') || input.includes('nice')) {
+        scores = { toxic: 1, insult: 1, obscene: 0, severe: 0 };
+      } else {
+        // Random but low scores for safe text
+        scores = { toxic: 12, insult: 8, obscene: 4, severe: 1 };
+      }
+
+      barToxic.style.width = scores.toxic + '%';
+      barInsult.style.width = scores.insult + '%';
+      barObscene.style.width = scores.obscene + '%';
+      barSevere.style.width = scores.severe + '%';
+    }
+
+    // Contact form simulation
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      btn.textContent = 'Message Dispatched ✓';
+      btn.style.background = 'var(--success)';
+      btn.style.borderColor = 'var(--success)';
+      setTimeout(() => {
+        btn.textContent = 'Send Message';
+        btn.style.background = '';
+        btn.style.borderColor = '';
+        event.target.reset();
+      }, 3000);
+    }
+  </script>
 </body>
+
 </html>
