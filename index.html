@@ -47,7 +47,9 @@
           Available for Internships &amp; Roles
         </div>
         <h1 class="hero-title" style="color: #ffffff; line-height: 1.35;">
-          <span style="font-size: calc(100% - 4px); font-weight: 800; color: #ffffff; display: block; margin-bottom: 0.75rem;">Hey There,</span>
+          <span
+            style="font-size: calc(100% - 4px); font-weight: 800; color: #ffffff; display: block; margin-bottom: 0.75rem;">Hey
+            There,</span>
           I'm <span style="margin-left: 0.35em;">Abenanthan P</span>
         </h1>
         <p class="hero-subtitle"
@@ -110,24 +112,28 @@
           <div class="terminal-title">abenanthan@rec-desktop: ~</div>
           <div style="width:36px"></div>
         </div>
-        <div class="terminal-body" id="terminalBody">
-          <div class="terminal-line">
-            <span class="terminal-prompt">abenanthan@rec:~$</span> <span class="terminal-cmd">init-portfolio</span>
-          </div>
-          <div class="terminal-line text-secondary">
-            Initializing interactive profile... Done.<br>
-            Type a command below or click a quick shortcut to inspect my profile.
-          </div>
-          <div class="terminal-line text-muted">
-            Available: about.md, tech-stack.sh, run-diagnostics
+        <div class="terminal-body" id="terminalBody" style="height: 250px; overflow-y: auto; cursor: text;"
+          onclick="document.getElementById('terminalInput').focus()">
+          <div id="terminalHistory"></div>
+          <div class="terminal-input-line" style="display: flex; align-items: center; gap: 8px; position: relative;">
+            <span class="terminal-prompt">abenanthan@rec:~$</span>
+            <div style="position: relative; flex-grow: 1; display: flex; align-items: center; overflow: hidden;">
+              <span id="terminalInputDisplay"
+                style="color: #ffffff; font-family: var(--font-mono); font-size: 0.85rem; white-space: pre; z-index: 2;"></span>
+              <span class="terminal-cursor"
+                style="display: inline-block; width: 8px; height: 15px; background: #22c55e; animation: cursor-blink 1s step-end infinite; margin-left: 2px; z-index: 2;"></span>
+              <input type="text" id="terminalInput" autocomplete="off" spellcheck="false"
+                style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: transparent; border: none; color: transparent; caret-color: transparent; font-family: var(--font-mono); font-size: 0.85rem; outline: none; padding: 0; z-index: 3;">
+            </div>
           </div>
         </div>
         <div style="padding:0 1.5rem 1.5rem">
           <div class="terminal-clickable-cmds">
-            <button class="terminal-cmd-pill" onclick="runTerminalCmd('cat about.md')">cat about.md</button>
-            <button class="terminal-cmd-pill" onclick="runTerminalCmd('./tech-stack.sh')">./tech-stack.sh</button>
-            <button class="terminal-cmd-pill" onclick="runTerminalCmd('./run-diagnostics')">./run-diagnostics</button>
-            <button class="terminal-cmd-pill" onclick="clearTerminal()">clear</button>
+            <button class="terminal-cmd-pill" onclick="runTerminalCmd('whoami')">whoami</button>
+            <button class="terminal-cmd-pill" onclick="runTerminalCmd('projects')">projects</button>
+            <button class="terminal-cmd-pill" onclick="runTerminalCmd('tech-stack')">tech-stack</button>
+            <button class="terminal-cmd-pill" onclick="runTerminalCmd('resume')">resume</button>
+            <button class="terminal-cmd-pill" onclick="runTerminalCmd('clear')">clear</button>
           </div>
         </div>
       </div>
@@ -634,51 +640,243 @@
       }
     });
 
-    // Interactive Terminal Simulator in Hero Section
+    // Interactive Terminal Simulator logic
+    const terminalInput = document.getElementById('terminalInput');
+    const terminalHistory = document.getElementById('terminalHistory');
     const terminalBody = document.getElementById('terminalBody');
-    const commandsData = {
-      'cat about.md': [
-        '<span class="terminal-output highlight">> B.E. Computer Science student at REC Chennai.</span>',
-        '<span class="terminal-output">> Passionate about ML pipelines, cloud networking, and fullstack apps.</span>',
-        '<span class="terminal-output">> Winner: Innovative Project of the Year from IIC.</span>'
-      ],
-      './tech-stack.sh': [
-        '<span class="terminal-output">Languages: Python, Java, Kotlin, C, SQL, Bash</span>',
-        '<span class="terminal-output">Frameworks: PyTorch, TensorFlow, YOLOv8, Node.js</span>',
-        '<span class="terminal-output">Infrastructure: AWS Academy, Docker, Linux Administration</span>'
-      ],
-      './run-diagnostics': [
-        '<span class="terminal-output">Running diagnostics...</span>',
-        '<span class="terminal-output">[OK] Git contributions fetched</span>',
-        '<span class="terminal-output">[OK] Projects verified & running</span>',
-        '<span class="terminal-output">[OK] AWS certification status: Cloud Architecting Graduate</span>'
-      ]
-    };
+    const terminalInputDisplay = document.getElementById('terminalInputDisplay');
 
+    // Run command wrapper (for click shortcuts)
     function runTerminalCmd(cmd) {
-      let lines = [
-        `<div class="terminal-line"><span class="terminal-prompt">abenanthan@rec:~$</span> <span class="terminal-cmd">${cmd}</span></div>`
-      ];
+      executeCommand(cmd);
+    }
 
-      if (commandsData[cmd]) {
-        commandsData[cmd].forEach(output => {
-          lines.push(`<div class="terminal-line">${output}</div>`);
-        });
-      } else if (cmd === 'clear') {
-        terminalBody.innerHTML = '';
+    // Typewriter initialization on site load
+    document.addEventListener('DOMContentLoaded', () => {
+      if (terminalHistory && terminalBody) {
+        setTimeout(() => {
+          const lineDiv = document.createElement('div');
+          lineDiv.className = 'terminal-line';
+          lineDiv.innerHTML = `<span class="terminal-prompt">abenanthan@rec:~$</span> <span class="terminal-cmd" id="initCmd"></span>`;
+          terminalHistory.appendChild(lineDiv);
+
+          const cmdText = 'init-portfolio';
+          let charIndex = 0;
+          const initCmdSpan = document.getElementById('initCmd');
+
+          const typeInterval = setInterval(() => {
+            if (charIndex < cmdText.length) {
+              if (initCmdSpan) initCmdSpan.textContent += cmdText[charIndex];
+              charIndex++;
+            } else {
+              clearInterval(typeInterval);
+
+              // Print output line 1
+              setTimeout(() => {
+                const out1 = document.createElement('div');
+                out1.className = 'terminal-line text-secondary';
+                out1.innerHTML = 'Initializing interactive profile... Done.';
+                terminalHistory.appendChild(out1);
+                terminalBody.scrollTop = terminalBody.scrollHeight;
+
+                // Print output line 2
+                setTimeout(() => {
+                  const out2 = document.createElement('div');
+                  out2.className = 'terminal-line text-secondary';
+                  out2.innerHTML = 'Type a command below or click a quick shortcut to inspect my profile.';
+                  terminalHistory.appendChild(out2);
+                  terminalBody.scrollTop = terminalBody.scrollHeight;
+
+                  // Print help prompt
+                  setTimeout(() => {
+                    const out3 = document.createElement('div');
+                    out3.className = 'terminal-line text-muted';
+                    out3.style.marginBottom = '0.75rem';
+                    out3.innerHTML = "Type 'help' to see all available commands.";
+                    terminalHistory.appendChild(out3);
+                    terminalBody.scrollTop = terminalBody.scrollHeight;
+                  }, 500);
+
+                }, 400);
+
+              }, 300);
+            }
+          }, 80);
+        }, 500);
+      }
+    });
+
+    // Input keyboard event handler
+    if (terminalInput) {
+      terminalInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const cmd = terminalInput.value;
+          executeCommand(cmd);
+          terminalInput.value = '';
+          if (terminalInputDisplay) {
+            terminalInputDisplay.textContent = '';
+          }
+        }
+      });
+
+      // Synchronize text values to display element
+      terminalInput.addEventListener('input', () => {
+        if (terminalInputDisplay) {
+          terminalInputDisplay.textContent = terminalInput.value;
+        }
+      });
+    }
+
+    // Command parser & executor
+    function executeCommand(rawCmd) {
+      const cleanCmd = rawCmd.trim();
+      const cmdLower = cleanCmd.toLowerCase();
+
+      // Print command inside history log
+      const inputLog = document.createElement('div');
+      inputLog.className = 'terminal-line';
+      inputLog.innerHTML = `<span class="terminal-prompt">abenanthan@rec:~$</span> <span class="terminal-cmd">${cleanCmd}</span>`;
+      terminalHistory.appendChild(inputLog);
+
+      if (cmdLower === 'clear') {
+        terminalHistory.innerHTML = '';
+        terminalBody.scrollTop = 0;
         return;
       }
 
-      terminalBody.innerHTML += lines.join('');
-      terminalBody.scrollTop = terminalBody.scrollHeight;
-    }
+      let outputLines = [];
 
-    function clearTerminal() {
-      terminalBody.innerHTML = `
-    <div class="terminal-line">
-      <span class="terminal-prompt">abenanthan@rec:~$</span> <span class="terminal-cmd">clear</span>
-    </div>
-  `;
+      if (cmdLower === 'help') {
+        outputLines = [
+          'Available commands:',
+          '  <span class="terminal-output highlight">whoami</span>       - About my profile & background',
+          '  <span class="terminal-output highlight">projects</span>     - Key projects portfolio list',
+          '  <span class="terminal-output highlight">tech-stack</span>   - Technologies, systems, and tools',
+          '  <span class="terminal-output highlight">education</span>    - Academic timeline & CGPA metrics',
+          '  <span class="terminal-output highlight">achievements</span> - Milestones, hackathons, and credentials',
+          '  <span class="terminal-output highlight">contact</span>      - LinkedIn, GitHub, and email links',
+          '  <span class="terminal-output highlight">resume</span>       - View/Download my PDF Resume document',
+          '  <span class="terminal-output highlight">ls</span>           - List files in simulated terminal folder',
+          '  <span class="terminal-output highlight">cat &lt;file&gt;</span>   - Output simulated file content',
+          '  <span class="terminal-output highlight">clear</span>        - Clear terminal history log',
+          '  <span class="terminal-output highlight">pwd / date</span>   - Standard Linux helper bash diagnostics'
+        ];
+      } else if (cmdLower === 'whoami') {
+        outputLines = [
+          'abenanthan',
+          'Computer Science Engineering student at Rajalakshmi Engineering College (REC) Chennai.',
+          'Specializing in full-stack engineering, AI/ML pipelines, and neural networks.'
+        ];
+      } else if (cmdLower === 'projects') {
+        outputLines = [
+          'Core Project Portfolio:',
+          '  * <span class="terminal-output highlight">BitVerity</span>     - ML-based keystroke & compilation code authenticity validator.',
+          '  * <span class="terminal-output highlight">ToxiShield</span>    - NLP text moderation filter powered by custom LSTMs.',
+          '  * <span class="terminal-output highlight">Road Inspector</span> - YOLOv8 computer vision model detecting road cracks.',
+          '  * <span class="terminal-output highlight">VibeUp</span>        - Dynamic CSS/JS audio player with reactive equalizer visualizer.'
+        ];
+      } else if (cmdLower === 'tech-stack' || cmdLower === 'techstack' || cmdLower === 'skills') {
+        outputLines = [
+          'Languages      : Python, Java, Kotlin, C, SQL, Bash shell scripting, HTML/CSS/JS',
+          'Frameworks/ML  : PyTorch, TensorFlow, YOLOv8, Pandas, NumPy, Node.js',
+          'Cloud & Tools  : AWS (Cloud Architecting Graduate), Docker, Git & CI/CD workflow'
+        ];
+      } else if (cmdLower === 'education') {
+        outputLines = [
+          'Rajalakshmi Engineering College (REC), Chennai (2024 - 2028)',
+          'B.E. Computer Science and Engineering | CGPA: 9.38 / 10'
+        ];
+      } else if (cmdLower === 'achievements') {
+        outputLines = [
+          '- 1st Place: Recipient of the Innovative Project of the Year Award from IIC REC.',
+          '- Finalist: SVCE National Level Smart City Hackathon.',
+          '- Certified: AWS Academy Graduate - Cloud Architecting.'
+        ];
+      } else if (cmdLower === 'contact') {
+        outputLines = [
+          'Mail     : abenanthan.72007@gmail.com',
+          'LinkedIn : linkedin.com/in/abenanthan-p-561485318',
+          'GitHub   : github.com/Abenanthan'
+        ];
+      } else if (cmdLower === 'resume') {
+        outputLines = [
+          'Resume file loaded successfully. Click below to view:',
+          '  <a href="Abenanthan Resume.pdf" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold;">[Abenanthan_Resume.pdf]</a>'
+        ];
+      } else if (cmdLower === 'ls') {
+        outputLines = [
+          'about.md    projects.txt    tech-stack.sh    resume.pdf'
+        ];
+      } else if (cmdLower === 'pwd') {
+        outputLines = [
+          '/home/abenanthan'
+        ];
+      } else if (cmdLower === 'date') {
+        outputLines = [
+          new Date().toString()
+        ];
+      } else if (cmdLower.startsWith('echo ')) {
+        outputLines = [
+          cleanCmd.substring(5)
+        ];
+      } else if (cmdLower.startsWith('cat ')) {
+        const file = cmdLower.substring(4).trim();
+        if (file === 'about.md') {
+          outputLines = [
+            'B.E. Computer Science student at REC Chennai.',
+            'Specializing in AI/ML pipelines, deep learning systems, and full-stack software.',
+            'Winner: Innovative Project of the Year from IIC.'
+          ];
+        } else if (file === 'projects.txt') {
+          outputLines = [
+            'Highlighted Projects:',
+            '  - BitVerity (AI Code Authenticity Verification Platform)',
+            '  - ToxiShield (NLP LSTM Moderation Tool)',
+            '  - Road Inspector (YOLOv8 Computer Vision CV Model)'
+          ];
+        } else if (file === 'tech-stack.sh') {
+          outputLines = [
+            'Languages: Python, Java, Kotlin, C, SQL, Bash',
+            'Frameworks: PyTorch, TensorFlow, YOLOv8, Node.js',
+            'Cloud/Infra: AWS, Docker, Linux Administration'
+          ];
+        } else if (file === 'resume.pdf') {
+          outputLines = [
+            'Resume Document Link:',
+            '  <a href="Abenanthan Resume.pdf" target="_blank" style="color: var(--accent); text-decoration: underline;">[Download/View Abenanthan_Resume.pdf]</a>'
+          ];
+        } else {
+          outputLines = [
+            `cat: ${file}: No such file or directory`
+          ];
+        }
+      } else if (cmdLower === './tech-stack.sh') {
+        executeCommand('cat tech-stack.sh');
+        return;
+      } else if (cmdLower === './run-diagnostics') {
+        outputLines = [
+          'Running diagnostics...',
+          '[OK] Git contributions fetched successfully',
+          '[OK] Core ML pipeline interfaces validated',
+          '[OK] AWS cloud architecting credentials active'
+        ];
+      } else {
+        outputLines = [
+          `bash: ${cleanCmd}: command not found`,
+          'Type <span class="terminal-output highlight">help</span> to list all available commands.'
+        ];
+      }
+
+      // Add each output line to history
+      outputLines.forEach(line => {
+        const lineDiv = document.createElement('div');
+        lineDiv.className = 'terminal-line text-secondary';
+        lineDiv.innerHTML = line;
+        terminalHistory.appendChild(lineDiv);
+      });
+
+      // Auto scroll to bottom
+      terminalBody.scrollTop = terminalBody.scrollHeight;
     }
 
     // Live interactive music mockup control logic
