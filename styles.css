@@ -1577,3 +1577,259 @@ body {
     min-width: 0;
   }
 }
+
+/* ===== THEME STYLES (DYNAMIC) ===== */
+body.theme-tokyonight {
+  --bg: #09090b;
+  --bg-card: #18181b;
+  --bg-card-hover: #27272a;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(99, 102, 241, 0.4);
+  --accent: #6366f1;
+  --accent-glow: rgba(99, 102, 241, 0.15);
+}
+
+body.theme-dracula {
+  --bg: #1e1f29;
+  --bg-card: #282a36;
+  --bg-card-hover: #343746;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-focus: rgba(189, 147, 249, 0.5);
+  --accent: #bd93f9;
+  --accent-glow: rgba(189, 147, 249, 0.2);
+}
+
+body.theme-cyberpunk {
+  --bg: #0c0b11;
+  --bg-card: #140d21;
+  --bg-card-hover: #261b3c;
+  --border: rgba(255, 0, 128, 0.15);
+  --border-focus: rgba(255, 0, 128, 0.6);
+  --accent: #ff007f;
+  --accent-glow: rgba(255, 0, 128, 0.2);
+}
+
+body.theme-nord {
+  --bg: #2e3440;
+  --bg-card: #3b4252;
+  --bg-card-hover: #434c5e;
+  --border: rgba(255, 255, 255, 0.05);
+  --border-focus: rgba(136, 192, 208, 0.5);
+  --accent: #88c0d0;
+  --accent-glow: rgba(136, 192, 208, 0.2);
+}
+
+/* Ensure terminal body handles absolute matrix canvas overlay */
+.terminal-body {
+  position: relative;
+}
+
+.terminal-matrix-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: #000000;
+  pointer-events: none; /* Let clicks pass through if needed, though we manage keyboard focus */
+}
+
+
+/* ===== PROJECTS FILTER & MODAL SYSTEM ===== */
+.project-filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--border-focus);
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background: var(--accent-glow);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Smooth transitions for filtering project cards */
+.project-card {
+  transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.2s ease;
+}
+
+.project-card.filtered-out {
+  opacity: 0;
+  transform: scale(0.95);
+  position: absolute;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+/* Code-Editor Modal Style */
+.project-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.project-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.project-modal-content {
+  background: #0d0c10;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 800px;
+  height: 80vh;
+  max-height: 550px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.project-modal.active .project-modal-content {
+  transform: scale(1);
+}
+
+.modal-title-bar {
+  background: #15141b;
+  border-bottom: 1px solid var(--border);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-workspace {
+  flex-grow: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.modal-sidebar {
+  width: 180px;
+  border-right: 1px solid var(--border);
+  background: #111016;
+  padding: 1rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  overflow-y: auto;
+  display: none; /* Hidden on small screens */
+}
+
+@media (min-width: 640px) {
+  .modal-sidebar { display: block; }
+}
+
+.sidebar-file-item {
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sidebar-file-item.active, .sidebar-file-item:hover {
+  background: rgba(255,255,255,0.05);
+  color: var(--text-primary);
+}
+
+.modal-editor {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background: #0d0c10;
+  overflow: hidden;
+}
+
+.editor-tabs {
+  display: flex;
+  background: #111016;
+  border-bottom: 1px solid var(--border);
+  height: 35px;
+}
+
+.editor-tab {
+  padding: 8px 16px;
+  border-right: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.editor-tab.active {
+  background: #0d0c10;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--accent);
+}
+
+.editor-body {
+  flex-grow: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.modal-spec-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  margin-right: 4px;
+  margin-bottom: 6px;
+}
+
+
+/* ===== SKILLS DYNAMIC WIDGET RESPONSIVENESS ===== */
+@media (max-width: 768px) {
+  .skills-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
