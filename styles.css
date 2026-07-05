@@ -1480,3 +1480,100 @@ body {
     opacity: 1;
   }
 }
+
+/* ===== GITHUB CONTRIBUTIONS & STATS ===== */
+.github-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.github-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: border-color 0.2s ease;
+}
+
+.github-card:hover {
+  border-color: var(--accent);
+}
+
+.github-card-title {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* GitHub Contribution Calendar Card */
+.gh-cal-card {
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.gh-cal-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.gh-cal-icon {
+  font-size: 1.1rem;
+}
+
+.gh-cal-img-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  background: #0d1117;
+  border-radius: 8px;
+  padding: 1rem 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.gh-cal-img {
+  width: 100%;
+  max-width: 900px;
+  min-width: 680px;
+  height: auto;
+  display: block;
+}
+
+.gh-cal-legend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.gh-leg-box {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+}
+
+@media (max-width: 992px) {
+  .github-stats-row {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .gh-cal-img {
+    min-width: 0;
+  }
+}

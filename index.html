@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="styles.css?v=1.1">
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
 </head>
 
 <body>
@@ -461,6 +462,78 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GITHUB CONTRIBUTIONS & STATS SECTION -->
+  <section class="section" id="github-activity">
+    <div class="section-header">
+      <span class="section-tag">Open Source Activity</span>
+      <h2 class="section-title">📊 GitHub Activity</h2>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+      <!-- Row 1: Stats & Languages -->
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem;" class="github-stats-row">
+        <!-- Stats Card -->
+        <div class="github-card"
+          style="display: flex; justify-content: center; align-items: center; padding: 1rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);">
+          <img
+            src="https://github-stats-extended.vercel.app/api?username=Abenanthan&show_icons=true&theme=tokyonight&bg_color=0c0d12&hide_border=true"
+            alt="Abenanthan's GitHub Stats" style="width: 100%; height: auto;" />
+        </div>
+        <!-- Languages Card -->
+        <div class="github-card"
+          style="display: flex; justify-content: center; align-items: center; padding: 1rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);">
+          <img
+            src="https://github-stats-extended.vercel.app/api/top-langs/?username=Abenanthan&layout=compact&theme=tokyonight&bg_color=0c0d12&hide_border=true"
+            alt="Abenanthan's Top Languages" style="width: 100%; height: auto;" />
+        </div>
+      </div>
+
+      <!-- Row 2: Week Streak -->
+      <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+        <div class="github-card"
+          style="display: flex; justify-content: center; align-items: center; padding: 1rem; width: 100%; max-width: 480px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);">
+          <img
+            src="https://streak-stats.demolab.com/?user=Abenanthan&theme=tokyonight&background=0c0d12&hide_border=true"
+            alt="Abenanthan's GitHub Streak" style="width: 100%; height: auto;" />
+        </div>
+      </div>
+
+      <!-- Row 3: Contribution Activity Graph -->
+      <div class="github-card"
+        style="display: flex; flex-direction: column; align-items: center; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);">
+        <div style="width: 100%; display: flex; justify-content: center; overflow-x: auto;">
+          <img
+            src="https://github-readme-activity-graph.vercel.app/graph?username=Abenanthan&theme=tokyonight&bg_color=0c0d12&hide_border=true"
+            alt="Abenanthan's Contribution Graph"
+            style="width: 100%; max-width: 850px; height: auto; min-width: 600px;" />
+        </div>
+      </div>
+
+      <!-- Row 4: Contribution Calendar (ghchart) -->
+      <div class="github-card gh-cal-card">
+        <div class="gh-cal-header">
+          <span class="gh-cal-icon">🟩</span>
+          <span>Contribution Calendar &mdash; <a href="https://github.com/Abenanthan" target="_blank" style="color:var(--accent);text-decoration:underline;">@Abenanthan</a></span>
+        </div>
+        <div class="gh-cal-img-wrapper">
+          <img
+            src="https://ghchart.rshah.org/39d353/Abenanthan"
+            alt="Abenanthan's GitHub Contribution Calendar"
+            class="gh-cal-img" />
+        </div>
+        <div class="gh-cal-legend">
+          <span>Less</span>
+          <span class="gh-leg-box" style="background:#161b22;"></span>
+          <span class="gh-leg-box" style="background:#0e4429;"></span>
+          <span class="gh-leg-box" style="background:#006d32;"></span>
+          <span class="gh-leg-box" style="background:#26a641;"></span>
+          <span class="gh-leg-box" style="background:#39d353;"></span>
+          <span>More</span>
         </div>
       </div>
     </div>
@@ -956,6 +1029,8 @@
         event.target.reset();
       }, 3000);
     }
+
+
   </script>
 </body>
 
