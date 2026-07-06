@@ -284,4 +284,10 @@ A deep learning content moderation system using **Bidirectional LSTM** that dete
 
 </div>
 
+<p align="center">
+  <a href="https://abenanthan-portfolio.vercel.app/">
+    <img src="https://img.shields.io/badge/🌐%20Portfolio-Visit%20Now-6A5ACD?style=for-the-badge" />
+  </a>
+</p>
+
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&animation=twinkling" width="100%"/>
