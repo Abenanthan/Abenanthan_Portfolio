@@ -1,6 +1,25 @@
-E:\Abenanthan_Portfolio\Abenanthan_Portfolio\assets\images\abe-image.png
-E:\Abenanthan_Portfolio\Abenanthan_Portfolio\assets\images\project-vibeup.png
-E:\Abenanthan_Portfolio\Abenanthan_Portfolio\assets\images\project-vibeup.png
-E:\Abenanthan_Portfolio\Abenanthan_Portfolio\assets\images\abe-image.png
-E:\Abenanthan_Portfolio\Abenanthan_Portfolio\assets\images\favicon2.svg
-E:\Abenanthan_Portfolio\Abenanthan_Portfolio\Abenanthan Resume.pdf
+# Pictures & Images
+assets/images/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.ico
+
+# Certificates
+Certificates/
+*Certificate*
+*certificate*
+
+# Resume
+"Abenanthan Resume.pdf"
+*Resume*
+*resume*
+*.pdf
+
+# Operating System & Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
