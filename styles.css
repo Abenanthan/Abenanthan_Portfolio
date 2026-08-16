@@ -198,6 +198,115 @@ body {
   align-items: center;
 }
 
+/* ===== HERO PANEL TAB SWITCHER ===== */
+.hero-panel {
+  background: #0c0c0e;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.hero-panel-tabs {
+  display: flex;
+  background: #18181b;
+  border-bottom: 1px solid var(--border);
+  padding: 0 8px;
+  gap: 4px;
+}
+
+.hero-panel-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -1px;
+}
+
+.hero-panel-tab:hover {
+  color: var(--text-secondary);
+}
+
+.hero-panel-tab.active {
+  color: var(--text-primary);
+  border-bottom-color: var(--accent);
+}
+
+.hero-panel-pane {
+  width: 100%;
+}
+
+/* Profile photo inside the panel */
+.hero-profile-photo {
+  position: relative;
+  width: 100%;
+  height: 390px;
+  overflow: hidden;
+}
+
+.hero-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 10%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.hero-panel:hover .hero-profile-img {
+  transform: scale(1.03);
+}
+
+.hero-profile-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1.25rem 1.25rem;
+  background: linear-gradient(to top, rgba(9,9,11,0.92) 0%, transparent 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-profile-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--success);
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 4px 10px;
+  border-radius: 50px;
+}
+
+.hero-profile-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--success);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--success);
+  display: inline-block;
+}
+
+.hero-profile-name {
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -1573,6 +1682,7 @@ body {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
   }
+
   .gh-cal-img {
     min-width: 0;
   }
@@ -1632,7 +1742,8 @@ body.theme-nord {
   height: 100%;
   z-index: 10;
   background: #000000;
-  pointer-events: none; /* Let clicks pass through if needed, though we manage keyboard focus */
+  pointer-events: none;
+  /* Let clicks pass through if needed, though we manage keyboard focus */
 }
 
 
@@ -1750,11 +1861,14 @@ body.theme-nord {
   font-size: 0.75rem;
   color: var(--text-secondary);
   overflow-y: auto;
-  display: none; /* Hidden on small screens */
+  display: none;
+  /* Hidden on small screens */
 }
 
 @media (min-width: 640px) {
-  .modal-sidebar { display: block; }
+  .modal-sidebar {
+    display: block;
+  }
 }
 
 .sidebar-file-item {
@@ -1766,8 +1880,9 @@ body.theme-nord {
   gap: 6px;
 }
 
-.sidebar-file-item.active, .sidebar-file-item:hover {
-  background: rgba(255,255,255,0.05);
+.sidebar-file-item.active,
+.sidebar-file-item:hover {
+  background: rgba(255, 255, 255, 0.05);
   color: var(--text-primary);
 }
 
@@ -1817,7 +1932,7 @@ body.theme-nord {
 .modal-spec-badge {
   display: inline-block;
   padding: 2px 8px;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border);
   border-radius: 4px;
   font-size: 0.75rem;
