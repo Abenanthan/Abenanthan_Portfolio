@@ -31,6 +31,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
   scrollbar-width: thin;
   scrollbar-color: var(--accent) var(--bg);
   background: var(--bg);
@@ -182,12 +183,13 @@ body {
 
 /* ===== HERO SECTION ===== */
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 70px);
   display: flex;
   align-items: center;
-  padding: 8rem 2rem 4rem;
+  padding: 6.5rem 2rem 3rem;
   max-width: var(--container-width);
   margin: 0 auto;
+  scroll-margin-top: 70px;
 }
 
 .hero-grid {
@@ -275,7 +277,7 @@ body {
   background: linear-gradient(to top, rgba(9,9,11,0.92) 0%, transparent 100%);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .hero-profile-status {
@@ -522,13 +524,14 @@ body {
 
 /* ===== SECTION LAYOUT ===== */
 .section {
-  padding: 7rem 2rem;
+  padding: 4.5rem 2rem;
   max-width: var(--container-width);
   margin: 0 auto;
+  scroll-margin-top: 70px;
 }
 
 .section-header {
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .section-tag {
@@ -1527,9 +1530,25 @@ body {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
+
+  .section {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .hero {
+    padding: 5.5rem 1.5rem 2.5rem;
+  }
 }
 
 @media (max-width: 640px) {
+  .section {
+    padding: 3rem 1.25rem;
+  }
+
+  .hero {
+    padding: 5rem 1.25rem 2rem;
+  }
+
   .nav-links {
     display: none;
     position: fixed;
