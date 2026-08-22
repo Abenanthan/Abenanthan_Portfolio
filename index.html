@@ -3,12 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Abenanthan P — Computer Science &amp; AI Engineer</title>
   <meta name="description"
     content="Portfolio of Abenanthan P — B.E. Computer Science student at REC Chennai. Specialized in AI/ML pipelines, Full-Stack development, and IoT solutions.">
-  <link rel="stylesheet" href="styles.css?v=1.1">
-  <link rel="icon" href="favicon2.svg">>
+  <link rel="stylesheet" href="styles.css?v=1.2">
+  <link rel="icon" href="favicon2.svg">
+  <meta name="theme-color" content="#09090b">
 
 </head>
 
@@ -28,9 +29,10 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#education">Education</a></li>
+        <li class="nav-cta-mobile"><a href="#contact">Get in touch</a></li>
       </ul>
       <a href="#contact" class="btn-contact-nav">Get in touch</a>
-      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
         <span></span>
         <span></span>
         <span></span>
@@ -148,7 +150,7 @@
               <div class="terminal-title">abenanthan@rec-desktop: ~</div>
               <div style="width:36px"></div>
             </div>
-            <div class="terminal-body" id="terminalBody" style="height: 290px; overflow-y: auto; cursor: text;"
+            <div class="terminal-body hero-terminal-body" id="terminalBody" style="overflow-y: auto; cursor: text;"
               onclick="document.getElementById('terminalInput').focus()">
               <div id="terminalHistory"></div>
               <div class="terminal-input-line"
@@ -364,7 +366,7 @@
             tracks. Uses ExoPlayer for background playback, notification bar controls, real-time lock screen sync, and
             Firestore databases for customized user playlists.
           </p>
-          <div class="project-links" style="display: flex; gap: 10px; align-items: center;">
+          <div class="project-links">
             <a href="https://github.com/Abenanthan/VibeUp-Music_Streaming_App" target="_blank" class="project-link">View
               Source Code →</a>
             <button onclick="openProjectModal('vibeup')"
@@ -390,7 +392,7 @@
             Evaluates developer keystrokes, temporal patterns, and stylistic consistency against fine-tuned
             classification models to verify origin authenticity.
           </p>
-          <div class="project-links" style="display: flex; gap: 10px; align-items: center;">
+          <div class="project-links">
             <a href="https://github.com/Abenanthan/BitVerity-AI-Monitored-Programming-Platform-with-Integrated-Code-Authenticity-Detection"
               target="_blank" class="project-link">View Source Code →</a>
             <button onclick="openProjectModal('bitverity')"
@@ -456,7 +458,7 @@
             cascading classification pipeline progressing from rapid binary damage filtration to precise multi-class
             localized crack bounding-box drawing.
           </p>
-          <div class="project-links" style="display: flex; gap: 10px; align-items: center;">
+          <div class="project-links">
             <a href="https://github.com/Abenanthan" target="_blank" class="project-link">View Repository →</a>
             <button onclick="openProjectModal('roadinspector')"
               style="padding: 4px 10px; font-size: 0.75rem; font-family: var(--font-mono); border-radius: var(--radius-sm); border: 1px solid var(--border); background: transparent; color: var(--text-primary); cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">cat
@@ -481,7 +483,7 @@
             network to evaluate comment strings against six distinct categories of toxicity, yielding 97% training
             accuracy.
           </p>
-          <div class="project-links" style="display: flex; gap: 10px; align-items: center;">
+          <div class="project-links">
             <a href="https://github.com/Abenanthan" target="_blank" class="project-link">View Repository →</a>
             <button onclick="openProjectModal('toxishield')"
               style="padding: 4px 10px; font-size: 0.75rem; font-family: var(--font-mono); border-radius: var(--radius-sm); border: 1px solid var(--border); background: transparent; color: var(--text-primary); cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">cat
@@ -536,7 +538,7 @@
 
     <div style="display: flex; flex-direction: column; gap: 2.5rem;">
       <!-- Row 1: Stats & Languages -->
-      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem;" class="github-stats-row">
+      <div class="github-stats-row github-stats-row--wide">
         <!-- Stats Card -->
         <div class="github-card"
           style="display: flex; justify-content: center; align-items: center; padding: 1rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);">
@@ -554,7 +556,7 @@
       </div>
 
       <!-- Row 2: Streak & Live Telemetry -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;" class="github-stats-row">
+      <div class="github-stats-row">
         <!-- Streak Card -->
         <div class="github-card"
           style="display: flex; justify-content: center; align-items: center; padding: 1rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);">
@@ -574,8 +576,7 @@
               <span style="color: var(--success); font-size: 0.75rem;">OPERATIONAL</span>
             </div>
           </div>
-          <div
-            style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+          <div class="telemetry-metrics">
             <div>
               <p>• UPTIME: <span id="telemetryUptime" style="color: var(--text-primary);">00:00:00</span></p>
               <p>• LATENCY: <span id="telemetryLatency" style="color: var(--text-primary);">Calculating...</span></p>
@@ -585,8 +586,7 @@
               <p>• ENV: <span style="color: var(--accent);">Production</span></p>
             </div>
           </div>
-          <div
-            style="background: rgba(0,0,0,0.2); border-radius: var(--radius-sm); padding: 0.5rem 0.75rem; border: 1px solid var(--border); height: 60px; overflow: hidden; color: var(--text-muted); font-size: 0.7rem; display: flex; flex-direction: column; gap: 2px;">
+          <div class="telemetry-log">
             <div id="telemetryLog1">> Boot sequence complete.</div>
             <div id="telemetryLog2">> Establishing handshakes... OK</div>
             <div id="telemetryLog3">> Monitoring environment.</div>
@@ -600,8 +600,7 @@
         <div style="width: 100%; display: flex; justify-content: center; overflow-x: auto;">
           <img
             src="https://github-readme-activity-graph.vercel.app/graph?username=Abenanthan&theme=tokyonight&bg_color=0c0d12&hide_border=true"
-            alt="Abenanthan's Contribution Graph"
-            style="width: 100%; max-width: 850px; height: auto; min-width: 600px;" />
+            alt="Abenanthan's Contribution Graph" class="gh-activity-img" />
         </div>
       </div>
 
@@ -661,8 +660,7 @@
       <h2 class="section-title">Technical Expertise</h2>
     </div>
 
-    <div class="skills-wrapper" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem;"
-      class="skills-grid-layout">
+    <div class="skills-wrapper skills-grid-layout">
       <!-- Matrix Lists -->
       <div class="skills-matrix" style="margin: 0; display: flex; flex-direction: column; gap: 1.5rem;">
         <div class="skills-cat" data-index="0" onmouseenter="highlightSkillAxis(0)" onmouseleave="resetSkillAxis()"
@@ -748,7 +746,7 @@
       <span class="section-tag">Education &amp; Credentials</span>
       <h2 class="section-title">Academic Background</h2>
     </div>
-    <div class="education-section" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem;">
+    <div class="education-section">
 
       <!-- Left Column: Education & Milestones -->
       <div style="display: flex; flex-direction: column; gap: 2rem;">
@@ -765,8 +763,7 @@
         </div>
 
         <!-- Hackathons & Achievements -->
-        <div class="achievements-block"
-          style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem;">
+        <div class="achievements-block">
           <h3
             style="font-family: var(--font-title); font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px;">
             <span>🏆</span> Hackathons &amp; Milestones
@@ -1036,9 +1033,24 @@
     // Mobile navigation toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
+    function setNavOpen(open) {
+      hamburger.classList.toggle('active', open);
+      navLinks.classList.toggle('active', open);
+      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('nav-open', open);
+    }
+
     hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navLinks.classList.toggle('active');
+      setNavOpen(!navLinks.classList.contains('active'));
+    });
+
+    // Close the menu after tapping a link, or when leaving mobile widths
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.closest('a')) setNavOpen(false);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 968) setNavOpen(false);
     });
 
     // Change header background on scroll
