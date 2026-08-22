@@ -2170,8 +2170,17 @@ body.theme-nord {
     padding: 6rem 1.5rem 3rem;
   }
 
+  /* Panel is capped and centred so the photo can't stretch into a
+     letterbox on wide phones/tablets */
+  .hero-panel {
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .hero-profile-photo {
-    height: 340px;
+    height: auto;
+    aspect-ratio: 344 / 390;
   }
 
   .education-section,
@@ -2240,10 +2249,6 @@ body.theme-nord {
   }
 
   /* Hero panel / terminal */
-  .hero-profile-photo {
-    height: 300px;
-  }
-
   .hero-panel-tab {
     padding: 9px 11px;
     font-size: 0.72rem;
@@ -2569,10 +2574,6 @@ body.theme-nord {
 
   .hero {
     padding: 5.25rem 1rem 2rem;
-  }
-
-  .hero-profile-photo {
-    height: 260px;
   }
 
   .quick-facts {
