@@ -347,9 +347,24 @@
               <div class="music-bar"></div>
             </div>
             <div class="music-controls">
-              <button class="music-btn" onclick="prevTrack()">⏮</button>
-              <button class="music-btn play-pause" id="playBtn" onclick="togglePlayState()">⏸</button>
-              <button class="music-btn" onclick="nextTrack()">⏭</button>
+              <button class="music-btn" onclick="prevTrack()" aria-label="Previous track">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6 5h2.2v14H6z" />
+                  <path d="M20 5v14l-10.5-7L20 5z" />
+                </svg>
+              </button>
+              <button class="music-btn play-pause" id="playBtn" onclick="togglePlayState()"
+                aria-label="Pause">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7.5 5h3.2v14H7.5zM13.3 5h3.2v14h-3.2z" />
+                </svg>
+              </button>
+              <button class="music-btn" onclick="nextTrack()" aria-label="Next track">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.8 5H18v14h-2.2z" />
+                  <path d="M4 5l10.5 7L4 19V5z" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -431,10 +446,9 @@
       <!-- Road Inspector -->
       <div class="project-card" data-category="ai">
         <div class="project-visual">
-          <div class="mockup-cv"
-            style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%22 height=%22100%22 fill=%22%232c2d30%22/><line x1=%220%22 y1=%2250%22 x2=%22100%22 y2=%2250%22 stroke=%22%23444%22 stroke-dasharray=%225%22/><line x1=%2250%22 y1=%220%22 x2=%2250%22 y2=%22100%22 stroke=%22%23444%22 stroke-dasharray=%225%22/></svg>')">
+          <div class="mockup-cv">
             <div class="cv-scanline"></div>
-            <div class="cv-bbox" style="top:25%;left:20%;width:55%;height:40%">
+            <div class="cv-bbox" style="top:8%;left:31.5%;width:17.5%;height:84%">
               <span class="cv-label">D00: Longitudinal Crack (92%)</span>
             </div>
             <div class="cv-info-pane">
@@ -1476,17 +1490,22 @@
     const musicBars = document.getElementById('musicBars');
     const musicTime = document.getElementById('musicTime');
 
+    const ICON_PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 5h3.2v14H7.5zM13.3 5h3.2v14h-3.2z"/></svg>';
+    const ICON_PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 5.1v13.8L19.5 12 8.5 5.1z"/></svg>';
+
     function togglePlayState() {
       isPlaying = !isPlaying;
       if (isPlaying) {
-        playBtn.textContent = '⏸';
+        playBtn.innerHTML = ICON_PAUSE;
+        playBtn.setAttribute('aria-label', 'Pause');
         musicBars.style.opacity = '1';
         musicTime.textContent = '0:45 / 3:12';
         Array.from(musicBars.children).forEach(bar => {
           bar.style.animationPlayState = 'running';
         });
       } else {
-        playBtn.textContent = '▶';
+        playBtn.innerHTML = ICON_PLAY;
+        playBtn.setAttribute('aria-label', 'Play');
         musicTime.textContent = 'Paused';
         Array.from(musicBars.children).forEach(bar => {
           bar.style.animationPlayState = 'paused';

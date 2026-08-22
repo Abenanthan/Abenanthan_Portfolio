@@ -840,37 +840,54 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin-top: auto;
 }
 
 .music-btn {
+  width: 34px;
+  height: 34px;
+  padding: 0;
   background: none;
   border: none;
+  border-radius: 50%;
   color: var(--text-secondary);
-  font-size: 1.1rem;
   cursor: pointer;
-  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  transition: color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.music-btn svg {
+  width: 17px;
+  height: 17px;
+  display: block;
+  fill: currentColor;
 }
 
 .music-btn:hover {
   color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .music-btn.play-pause {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
   background: var(--text-primary);
-  color: var(--bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
+  color: #111;
+}
+
+.music-btn.play-pause svg {
+  width: 15px;
+  height: 15px;
 }
 
 .music-btn.play-pause:hover {
-  transform: scale(1.05);
+  background: #ffffff;
+  color: #111;
+  transform: scale(1.06);
 }
 
 /* MOCKUP CODE EDITOR */
@@ -940,6 +957,9 @@ body {
   width: 100%;
   height: 100%;
   border-radius: var(--radius-sm);
+  background-image:
+    linear-gradient(rgba(6, 7, 10, 0.30), rgba(6, 7, 10, 0.46)),
+    url('assets/images/road-crack.svg');
   background-size: cover;
   background-position: center;
   position: relative;
