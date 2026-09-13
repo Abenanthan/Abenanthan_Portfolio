@@ -7,7 +7,7 @@
   <title>Abenanthan P — Computer Science &amp; AI Engineer</title>
   <meta name="description"
     content="Portfolio of Abenanthan P — B.E. Computer Science student at REC Chennai. Specialized in AI/ML pipelines, Full-Stack development, and IoT solutions.">
-  <link rel="stylesheet" href="styles.css?v=1.2">
+  <link rel="stylesheet" href="styles.css?v=1.4">
   <link rel="icon" href="favicon2.svg">
   <meta name="theme-color" content="#09090b">
 
@@ -155,13 +155,14 @@
               <div id="terminalHistory"></div>
               <div class="terminal-input-line"
                 style="display: flex; align-items: center; gap: 8px; position: relative;">
-                <span class="terminal-prompt">abenanthan@rec:~$</span>
+                <span class="terminal-prompt"><span class="prompt-host">abenanthan@rec</span>:~$</span>
                 <div style="position: relative; flex-grow: 1; display: flex; align-items: center; overflow: hidden;">
                   <span id="terminalInputDisplay"
                     style="color: #ffffff; font-family: var(--font-mono); font-size: 0.85rem; white-space: pre; z-index: 2;"></span>
                   <span class="terminal-cursor"
                     style="display: inline-block; width: 8px; height: 15px; background: #22c55e; animation: cursor-blink 1s step-end infinite; margin-left: 2px; z-index: 2;"></span>
                   <input type="text" id="terminalInput" autocomplete="off" spellcheck="false"
+                    autocapitalize="off" autocorrect="off" enterkeyhint="go"
                     style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: transparent; border: none; color: transparent; caret-color: transparent; font-family: var(--font-mono); font-size: 0.85rem; outline: none; padding: 0; z-index: 3;">
                 </div>
               </div>
@@ -1094,7 +1095,7 @@
         setTimeout(() => {
           const lineDiv = document.createElement('div');
           lineDiv.className = 'terminal-line';
-          lineDiv.innerHTML = `<span class="terminal-prompt">abenanthan@rec:~$</span> <span class="terminal-cmd" id="initCmd"></span>`;
+          lineDiv.innerHTML = `<span class="terminal-prompt"><span class="prompt-host">abenanthan@rec</span>:~$</span> <span class="terminal-cmd" id="initCmd"></span>`;
           terminalHistory.appendChild(lineDiv);
 
           const cmdText = 'init-portfolio';
@@ -1260,7 +1261,7 @@
       // Print command inside history log
       const inputLog = document.createElement('div');
       inputLog.className = 'terminal-line';
-      inputLog.innerHTML = `<span class="terminal-prompt">abenanthan@rec:~$</span> <span class="terminal-cmd">${cleanCmd}</span>`;
+      inputLog.innerHTML = `<span class="terminal-prompt"><span class="prompt-host">abenanthan@rec</span>:~$</span> <span class="terminal-cmd">${cleanCmd}</span>`;
       terminalHistory.appendChild(inputLog);
 
       if (cmdLower === 'clear') {

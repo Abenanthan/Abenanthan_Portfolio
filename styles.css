@@ -2172,10 +2172,27 @@ body.theme-nord {
 
   /* Panel is capped and centred so the photo can't stretch into a
      letterbox on wide phones/tablets */
+  /* minmax(0,1fr) not 1fr: a plain 1fr track takes its minimum from the
+     item's min-content, so the terminal's max-content history blew the
+     track (and the panel) out past the viewport. */
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* width:100% is what actually pins it - with only max-width, the panel's
+     min-content (long prompt + pill row + ASCII output) let it expand all
+     the way to 440px inside a 358px track and pushed the page sideways. */
   .hero-panel {
+    width: 100%;
     max-width: 440px;
+    min-width: 0;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .hero-panel-pane,
+  .hero-panel .terminal-wrapper {
+    min-width: 0;
   }
 
   .hero-profile-photo {
@@ -2276,10 +2293,12 @@ body.theme-nord {
   }
 
   /* The terminal prints fixed-width ASCII tables; wrapping them shreds the
-     box borders. Let the pane pan sideways like a real terminal instead. */
+     box borders. Let the pane pan sideways like a real terminal instead.
+     overscroll-behavior stops that panning from chaining to the page. */
   .hero-terminal-body {
+    height: 280px;
     overflow-x: auto;
-    overscroll-behavior-x: contain;
+    overscroll-behavior: contain;
   }
 
   .hero-terminal-body #terminalHistory {
@@ -2288,6 +2307,35 @@ body.theme-nord {
 
   .hero-terminal-body .terminal-line {
     white-space: pre;
+  }
+
+  /* typed text should match output size, not the desktop 0.85rem */
+  #terminalInputDisplay {
+    font-size: 0.78rem !important;
+  }
+
+  .terminal-output {
+    padding-left: 0.5rem;
+  }
+
+  /* one tidy scrollable row of shortcuts instead of two wrapped rows -
+     these are the practical way to drive the terminal on a phone */
+  .terminal-clickable-cmds {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    margin-top: 0.75rem;
+    padding-bottom: 2px;
+  }
+
+  .terminal-clickable-cmds::-webkit-scrollbar {
+    display: none;
+  }
+
+  .terminal-cmd-pill {
+    flex: 0 0 auto;
+    padding: 7px 13px;
   }
 
   /* quick-command pill tray (inline-padded in markup) */
@@ -2598,6 +2646,11 @@ body.theme-nord {
     font-size: 0.75rem;
   }
 
+  /* "abenanthan@rec:~$" eats a third of the line on a phone - drop to ":~$" */
+  .prompt-host {
+    display: none;
+  }
+
   .footer-inner {
     flex-direction: column;
     gap: 0.75rem;
@@ -2614,10 +2667,6 @@ body.theme-nord {
   .terminal-body {
     padding: 0.85rem;
     font-size: 0.72rem;
-  }
-
-  .terminal-prompt {
-    font-size: 0.65rem;
   }
 
   .hero-panel-tab {
