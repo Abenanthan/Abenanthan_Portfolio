@@ -13,6 +13,8 @@
   --accent-glow: rgba(99, 102, 241, 0.15);
   --success: #10b981;
   --success-glow: rgba(16, 185, 129, 0.1);
+  --secondary: #ef4444;
+  --track: rgba(255, 255, 255, 0.05);
   --radius: 12px;
   --radius-sm: 8px;
   --font-main: 'Inter', -apple-system, sans-serif;
@@ -181,6 +183,58 @@ body {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
+/* ===== THEME TOGGLE ===== */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.theme-toggle {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+.theme-toggle svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Show the icon of the mode you would switch to */
+.theme-toggle .icon-moon,
+[data-mode="light"] .theme-toggle .icon-sun {
+  display: none;
+}
+
+[data-mode="light"] .theme-toggle .icon-moon {
+  display: block;
+}
+
 /* ===== HERO SECTION ===== */
 .hero {
   min-height: calc(100vh - 70px);
@@ -274,7 +328,7 @@ body {
   left: 0;
   right: 0;
   padding: 2rem 1.25rem 1.25rem;
-  background: linear-gradient(to top, rgba(9,9,11,0.92) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(9, 9, 11, 0.92) 0%, transparent 100%);
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -2339,7 +2393,7 @@ body.theme-nord {
   }
 
   /* quick-command pill tray (inline-padded in markup) */
-  .hero-panel .terminal-wrapper > div:last-child {
+  .hero-panel .terminal-wrapper>div:last-child {
     padding: 0 1rem 1rem !important;
   }
 
@@ -2673,4 +2727,336 @@ body.theme-nord {
     padding: 9px 8px;
     font-size: 0.68rem;
   }
+}
+
+/* =====================================================================
+   LIGHT MODE  (html[data-mode="light"], set from the OS or the toggle)
+   Primary: indigo · Secondary: red
+   Selectors include `body` so they outrank the body.theme-* accent sets.
+   ===================================================================== */
+html[data-mode="light"],
+html[data-mode="light"] body {
+  --bg: #fafafa;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f4f4f5;
+  --border: rgba(9, 9, 11, 0.1);
+  --border-focus: rgba(220, 38, 38, 0.45);
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-muted: #71717a;
+  --success: #059669;
+  --success-glow: rgba(5, 150, 105, 0.1);
+  --secondary: #dc2626;
+  --track: rgba(9, 9, 11, 0.08);
+  --surface: #ffffff;
+  --surface-bar: #f4f4f5;
+  --surface-inset: #f8f8f9;
+  color-scheme: light;
+}
+
+html[data-mode="light"] body.theme-tokyonight,
+html[data-mode="light"] body:not([class*="theme-"]) {
+  --accent: #4f46e5;
+  --accent-glow: rgba(79, 70, 229, 0.1);
+}
+
+html[data-mode="light"] ::selection {
+  background: rgba(220, 38, 38, 0.18);
+}
+
+html[data-mode="light"] {
+  scrollbar-color: var(--secondary) var(--bg);
+}
+
+/* --- Background grid --- */
+html[data-mode="light"] .grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(9, 9, 11, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(9, 9, 11, 0.04) 1px, transparent 1px);
+}
+
+/* --- Navigation --- */
+html[data-mode="light"] .header {
+  background: rgba(250, 250, 250, 0.75);
+}
+
+html[data-mode="light"] .header.scrolled {
+  background: rgba(250, 250, 250, 0.92);
+  box-shadow: 0 1px 12px rgba(9, 9, 11, 0.06);
+}
+
+html[data-mode="light"] .nav-links a.active {
+  color: var(--secondary);
+}
+
+html[data-mode="light"] .btn-contact-nav,
+html[data-mode="light"] .theme-toggle {
+  background: #ffffff;
+}
+
+html[data-mode="light"] .btn-contact-nav:hover {
+  color: #fff;
+}
+
+html[data-mode="light"] .nav-links {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+@media (min-width: 969px) {
+  html[data-mode="light"] .nav-links {
+    background: transparent;
+  }
+}
+
+/* --- Hero --- */
+html[data-mode="light"] .hero-title,
+html[data-mode="light"] .hero-title > span:first-child {
+  color: var(--text-primary) !important;
+}
+
+html[data-mode="light"] .hero-title > span:last-child {
+  color: var(--secondary);
+}
+
+html[data-mode="light"] .hero-subtitle[style*="#cbd5e1"] {
+  color: var(--text-secondary) !important;
+}
+
+html[data-mode="light"] .hero-subtitle[style*="var(--accent)"] {
+  color: var(--secondary) !important;
+}
+
+html[data-mode="light"] .hero-panel,
+html[data-mode="light"] .terminal-wrapper {
+  background: var(--surface);
+}
+
+html[data-mode="light"] .hero-panel {
+  box-shadow: 0 20px 45px rgba(9, 9, 11, 0.08);
+}
+
+html[data-mode="light"] .hero-profile-info {
+  background: linear-gradient(to top, rgba(9, 9, 11, 0.85) 0%, transparent 100%);
+}
+
+html[data-mode="light"] .hero-profile-name {
+  color: #ffffff;
+}
+
+html[data-mode="light"] .hero-panel-tabs,
+html[data-mode="light"] .terminal-header,
+html[data-mode="light"] .code-header {
+  background: var(--surface-bar);
+}
+
+html[data-mode="light"] .hero-panel-tab.active {
+  border-bottom-color: var(--secondary);
+}
+
+html[data-mode="light"] #terminalInputDisplay {
+  color: var(--text-primary) !important;
+}
+
+html[data-mode="light"] .terminal-cursor {
+  background: var(--secondary) !important;
+}
+
+html[data-mode="light"] .terminal-cmd-pill {
+  background: var(--surface-bar);
+}
+
+html[data-mode="light"] .terminal-cmd-pill:hover {
+  background: rgba(220, 38, 38, 0.06);
+  border-color: var(--secondary);
+}
+
+/* --- Buttons --- */
+html[data-mode="light"] .btn-secondary:hover,
+html[data-mode="light"] .music-btn:hover,
+html[data-mode="light"] .sidebar-file-item:hover {
+  background: rgba(9, 9, 11, 0.05);
+}
+
+html[data-mode="light"] .btn-github:hover {
+  background: rgba(9, 9, 11, 0.05) !important;
+  border-color: #18181b !important;
+  color: #18181b !important;
+  box-shadow: 0 0 15px rgba(9, 9, 11, 0.08);
+}
+
+html[data-mode="light"] .btn-linkedin:hover {
+  color: #0077b5 !important;
+}
+
+html[data-mode="light"] .btn-email:hover {
+  color: #dc2626 !important;
+}
+
+html[data-mode="light"] .btn-resume:hover {
+  color: var(--accent) !important;
+}
+
+/* --- Sections: red as the secondary highlight --- */
+html[data-mode="light"] .section-tag,
+html[data-mode="light"] .timeline-company,
+html[data-mode="light"] .timeline-bullets li::before,
+html[data-mode="light"] .fact-icon,
+html[data-mode="light"] .skills-cat-icon,
+html[data-mode="light"] .contact-icon,
+html[data-mode="light"] .edu-shield,
+html[data-mode="light"] .project-link:hover {
+  color: var(--secondary);
+}
+
+html[data-mode="light"] .fact-card:hover,
+html[data-mode="light"] .skills-cat:hover,
+html[data-mode="light"] .skill-item:hover,
+html[data-mode="light"] .achieve-card:hover,
+html[data-mode="light"] .contact-method:hover,
+html[data-mode="light"] .github-card:hover,
+html[data-mode="light"] .timeline-item:hover .timeline-marker {
+  border-color: var(--secondary);
+}
+
+html[data-mode="light"] .timeline-item:hover .timeline-marker {
+  color: var(--secondary);
+}
+
+html[data-mode="light"] .edu-shield {
+  background: rgba(220, 38, 38, 0.08);
+}
+
+html[data-mode="light"] .timeline-date,
+html[data-mode="light"] .project-tag,
+html[data-mode="light"] .skill-item,
+html[data-mode="light"] .filter-btn,
+html[data-mode="light"] .modal-spec-badge,
+html[data-mode="light"] .cert-icon {
+  background: rgba(9, 9, 11, 0.04) !important;
+}
+
+html[data-mode="light"] .skill-item:hover {
+  background: rgba(220, 38, 38, 0.05) !important;
+}
+
+html[data-mode="light"] .filter-btn.active {
+  background: rgba(220, 38, 38, 0.08) !important;
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+html[data-mode="light"] .fact-card,
+html[data-mode="light"] .project-card,
+html[data-mode="light"] .skills-cat,
+html[data-mode="light"] .achieve-card,
+html[data-mode="light"] .contact-method,
+html[data-mode="light"] .github-card,
+html[data-mode="light"] .cert-card {
+  box-shadow: 0 1px 3px rgba(9, 9, 11, 0.04);
+}
+
+/* --- Project mockups --- */
+html[data-mode="light"] .project-visual {
+  background: var(--surface-bar);
+  box-shadow: 0 10px 30px rgba(9, 9, 11, 0.06);
+}
+
+html[data-mode="light"] .mockup-music,
+html[data-mode="light"] .mockup-code,
+html[data-mode="light"] .mockup-nlp {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+html[data-mode="light"] .code-header {
+  border-bottom-color: var(--border);
+}
+
+html[data-mode="light"] .music-btn.play-pause,
+html[data-mode="light"] .music-btn.play-pause:hover {
+  background: var(--text-primary);
+  color: #ffffff;
+}
+
+html[data-mode="light"] .code-content { color: #6d28d9; }
+html[data-mode="light"] .code-keyword { color: #be123c; }
+html[data-mode="light"] .code-string { color: #047857; }
+html[data-mode="light"] .code-comment { color: #71717a; }
+
+html[data-mode="light"] .code-alert-title {
+  color: var(--secondary);
+}
+
+html[data-mode="light"] .nlp-input,
+html[data-mode="light"] .form-input {
+  background: var(--surface-inset);
+}
+
+html[data-mode="light"] .form-input:focus,
+html[data-mode="light"] .nlp-input:focus {
+  border-color: var(--secondary);
+  background: #ffffff;
+}
+
+html[data-mode="light"] .nlp-bar {
+  background: var(--track);
+}
+
+html[data-mode="light"] .nlp-fill.toxic {
+  background: var(--secondary);
+}
+
+/* --- Project modal --- */
+html[data-mode="light"] .project-modal {
+  background: rgba(9, 9, 11, 0.4);
+}
+
+html[data-mode="light"] .project-modal-content,
+html[data-mode="light"] .modal-editor,
+html[data-mode="light"] .editor-tab.active {
+  background: var(--surface);
+}
+
+html[data-mode="light"] .project-modal-content {
+  box-shadow: 0 25px 50px -12px rgba(9, 9, 11, 0.25);
+}
+
+html[data-mode="light"] .modal-title-bar,
+html[data-mode="light"] .modal-sidebar,
+html[data-mode="light"] .editor-tabs {
+  background: var(--surface-bar);
+}
+
+html[data-mode="light"] .editor-tab.active {
+  border-bottom-color: var(--secondary);
+}
+
+/* --- GitHub activity --- */
+html[data-mode="light"] .telemetry-log {
+  background: var(--surface-bar);
+}
+
+html[data-mode="light"] #contribCalendarWrapper,
+html[data-mode="light"] .gh-cal-img-wrapper {
+  background: #ffffff !important;
+  border: 1px solid var(--border);
+}
+
+html[data-mode="light"] .gh-cal-img {
+  filter: none !important;
+}
+
+html[data-mode="light"] .gh-cal-legend .gh-leg-box:nth-child(2) { background: #ebedf0 !important; }
+html[data-mode="light"] .gh-cal-legend .gh-leg-box:nth-child(3) { background: #9be9a8 !important; }
+html[data-mode="light"] .gh-cal-legend .gh-leg-box:nth-child(4) { background: #40c463 !important; }
+html[data-mode="light"] .gh-cal-legend .gh-leg-box:nth-child(5) { background: #30a14e !important; }
+html[data-mode="light"] .gh-cal-legend .gh-leg-box:nth-child(6) { background: #216e39 !important; }
+
+/* --- Contact transmission log --- */
+html[data-mode="light"] #contactTerminal {
+  background: var(--surface-bar) !important;
+}
+
+html[data-mode="light"] #contactTerminal > div:first-child {
+  border-bottom-color: var(--border) !important;
 }
