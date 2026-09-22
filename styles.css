@@ -760,6 +760,10 @@ body {
   line-height: 1.6;
 }
 
+.timeline-tags {
+  margin: 1.25rem 0 0;
+}
+
 .timeline-bullets li::before {
   content: '→';
   position: absolute;
