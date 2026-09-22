@@ -6,7 +6,6 @@
 
 <br/>
 
-
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/abenanthan-p-561485318)
 [![Email](https://img.shields.io/badge/Gmail-abenanthan.72007%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:abenanthan.72007@gmail.com)
 [![Phone](https://img.shields.io/badge/Mobile-%2B91%209940867949-25D366?style=flat-square&logo=whatsapp&logoColor=white)](tel:+91XXXXXXXXXX)
@@ -25,7 +24,7 @@
 <tr>
 <td width="55%" valign="top">
 
-### 👨‍💻 &nbsp;About Me
+###  &nbsp;ABOUT ME 
 
 I'm a **Computer Science Engineering student** at Rajalakshmi Engineering College, Chennai, passionate about building things at the intersection of **AI, Cloud, and real-world impact**.
 
@@ -38,7 +37,6 @@ From detecting road damage with deep learning to fighting cyberbullying with NLP
 -  Skilled in  **Python, Java and SQL**
 -  Intrested in **PyTorch, Android Dev, Docker, or System Design**
 
-
 </td>
 <td width="45%" align="center" valign="middle">
 
@@ -50,7 +48,7 @@ From detecting road damage with deep learning to fighting cyberbullying with NLP
 
 ---
 
-## 🚀 &nbsp;Featured Projects
+##  &nbsp;FEATURED PROJECTS
 
 <div align="center">
 
@@ -65,7 +63,7 @@ An Android music streaming app streaming **Tamil, Telugu & Hindi music** via Jio
 
 `Kotlin` `Jetpack Compose` `Firebase Auth & Firestore` `ExoPlayer/Media3`
 
-[![View Repo](https://img.shields.io/badge/View%20Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Abenanthan)
+[![View Repo](https://img.shields.io/badge/View%20Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Abenanthan/VibeUp-Music_Streaming_App)
 
 </td>
 <td align="center" width="50%">
@@ -78,7 +76,7 @@ A full-stack platform with a **real-time multi-model ML pipeline** detecting AI-
 `PostgreSQL` `Redis` `Socket.io` `Docker` `Monaco Editor`
 `XGBoost` `CodeBERT` `UniXcoder` `Prisma`
 
-[![View Repo](https://img.shields.io/badge/View%20Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Abenanthan/BitVerity)
+[![View Repo](https://img.shields.io/badge/View%20Repo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Abenanthan/BitVerity-AI-Monitored-Programming-Platform-with-Integrated-Code-Authenticity-Detection)
 
 </td>
 </tr>
@@ -114,10 +112,10 @@ A deep learning content moderation system using **Bidirectional LSTM** that dete
 
 ---
 
-## 💼 &nbsp;Experience
+##  &nbsp;EXPERIENCE
 
 <details>
-<summary><b> &nbsp;AI Intern — KuttyKoncepts, Rajalakshmi Engineering College</b> &nbsp;&nbsp;|&nbsp;&nbsp; 2026 – Present &nbsp;&nbsp;|&nbsp;&nbsp; Chennai, India</summary>
+<summary><b> &nbsp;AI Intern — KuttyKoncepts Project, Rajalakshmi Engineering College</b> &nbsp;&nbsp;|&nbsp;&nbsp; 2026 – Present &nbsp;&nbsp;|&nbsp;&nbsp; Chennai, India</summary>
 <br/>
 
 > ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![AI/ML](https://img.shields.io/badge/AI%2FML-BF91F3?style=flat-square) ![Moodle](https://img.shields.io/badge/Moodle-F98012?style=flat-square&logo=moodle&logoColor=white) ![MoviePy](https://img.shields.io/badge/MoviePy-38BDAE?style=flat-square) ![gTTS](https://img.shields.io/badge/gTTS-70A5FD?style=flat-square)
@@ -130,7 +128,7 @@ A deep learning content moderation system using **Bidirectional LSTM** that dete
 </details>
 
 <details>
-<summary><b> &nbsp;IoT Intern — National Small Industries Corporation (NSIC), Technical Services Centre</b> &nbsp;&nbsp;|&nbsp;&nbsp; Dec 2025 &nbsp;&nbsp;|&nbsp;&nbsp; Chennai, India</summary>
+<summary><b> &nbsp;IoT Intern — National Small Industries Corporation (NSIC), Technical Services Centre,</b> &nbsp;&nbsp;|&nbsp;&nbsp; Dec 2025 &nbsp;&nbsp;|&nbsp;&nbsp; Chennai, India</summary>
 <br/>
 
 > ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-A22846?style=flat-square&logo=raspberrypi&logoColor=white) ![ThingSpeak](https://img.shields.io/badge/ThingSpeak-38BDAE?style=flat-square) ![REST API](https://img.shields.io/badge/REST%20API-70A5FD?style=flat-square)
@@ -143,7 +141,7 @@ A deep learning content moderation system using **Bidirectional LSTM** that dete
 </details>
 
 <details>
-<summary><b> &nbsp;Design Team Member — CyberSentinels Club, Rajalakshmi Engineering College</b> &nbsp;&nbsp;|&nbsp;&nbsp; 2025 – Present &nbsp;&nbsp;|&nbsp;&nbsp; Chennai, India</summary>
+<summary><b> &nbsp;Designer — CyberSentinels Club, Rajalakshmi Engineering College</b> &nbsp;&nbsp;|&nbsp;&nbsp; 2025 – Present &nbsp;&nbsp;|&nbsp;&nbsp; Chennai, India</summary>
 <br/>
 
 > ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white) ![Canva](https://img.shields.io/badge/Canva-00C4CC?style=flat-square&logo=canva&logoColor=white)
@@ -156,7 +154,7 @@ A deep learning content moderation system using **Bidirectional LSTM** that dete
 
 ---
 
-## 🏅 &nbsp;Achievements
+##  &nbsp;ACHIEVEMENTS
 
 <div align="center">
 
@@ -172,7 +170,7 @@ A deep learning content moderation system using **Bidirectional LSTM** that dete
 
 ---
 
-## 🛠️ &nbsp;Tech Stack
+##  &nbsp;TECH STACK
 
 <div align="center">
 
@@ -220,29 +218,51 @@ A deep learning content moderation system using **Bidirectional LSTM** that dete
 
 ---
 
-## 📊 &nbsp;GitHub Activity
+
+---
+
+## &nbsp;GITHUB ACTIVITY
+
 
 <div align="center">
-  <img height="160" src="https://github-readme-stats-sigma-five.vercel.app/api?username=Abenanthan&show_icons=true&theme=tokyonight&hide_rank=true"/>
-  &nbsp;
-  <img height="160" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Abenanthan&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&text_color=c9d1d9&langs_count=8&border_radius=10"/>
+
+<a href="https://github.com/Abenanthan">
+
+<img width="70%" src="https://streak-stats.demolab.com/?user=Abenanthan&theme=tokyonight-duo&hide_border=true&background=0D1117&ring=70A5FD&fire=BF91F3&currStreakLabel=70A5FD&sideLabels=38BDAE&dates=8B949E&currStreakNum=C9D1D9&sideNums=C9D1D9&stroke=0D1117&border_radius=12&hide_current_streak=false&hide_longest_streak=false&hide_total_contributions=false&mode=weekly&custom_title=Contribution%20Streak"/>
+
+</a>
+
+<br/><br/>
+
+<a href="https://github.com/Abenanthan">
+
+<img width="96%" src="https://github-readme-activity-graphkayan.vercel.app/graph?username=Abenanthan&bg_color=0D1117&color=70A5FD&line=BF91F3&point=38BDAE&area=true&hide_border=true&radius=12&custom_title=Contribution%20Activity&days=35"/>
+
+</a>
+<br/><br/>
 </div>
 
-<br/>
-
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=Abenanthan&theme=tokyonight-duo&hide_border=true&background=0D1117&ring=70A5FD&fire=BF91F3&currStreakLabel=70A5FD&sideLabels=38BDAE&dates=8B949E&currStreakNum=C9D1D9&sideNums=C9D1D9&stroke=0D1117&border_radius=10&hide_current_streak=false&hide_longest_streak=true&hide_total_contributions=true&mode=weekly&custom_title=Total%20Commits"/>
-</div>
 
-<br/>
+<a href="https://github.com/Abenanthan">
 
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Abenanthan&theme=tokyo-night&bg_color=0d1117&color=70a5fd&line=bf91f3&point=38bdae&area=true&hide_border=true" width="100%"/>
+<img width="40%" src="https://github-stats-extended.vercel.app/api?username=Abenanthan&show_icons=true&theme=tokyonight&hide_border=true&hide_rank=true&include_all_commits=true"/>
+
+</a>
+
+<a href="https://github.com/Abenanthan">
+
+<img width="40%" src="https://github-stats-extended.vercel.app/api/top-langs/?username=Abenanthan&layout=compact&theme=tokyonight&hide_border=true&langs_count=8"/>
+
+</a>
+
+<br/><br/>
 </div>
 
 ---
 
-## 🎓 &nbsp;Education & Learning Roadmap
+
+##  &nbsp;EDUCATION AND LEARNING
 
 <div align="center">
 
